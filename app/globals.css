@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+    .border-gradient {
+      border: 2px solid;
+      background-clip: padding-box;
+      border-image-source: linear-gradient(to bottom right, #8b5cf6, #2563eb);
+      border-image-slice: 1;
+    
+    }
+  }
+  
