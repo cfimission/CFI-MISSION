@@ -164,7 +164,7 @@ const Gallery = () => {
       <Navbar />
 <div className="flex justify-center items-center py-10">
 
-      <div className="grid grid-cols-2  gap-10">
+      <div className="grid md:grid-cols-2  grid-cols-1 gap-10">
         {galleryData.map(({ title, images }, galleryIndex) => (
           <div key={galleryIndex} className="grid gap-4 w-96 h-96 ">
             <div>
