@@ -11,3 +11,20 @@
     }
   }
   
+  .rtl-animation {
+    transform: scaleX(-1); /* This will flip the element horizontally */
+    animation: bounceRightToLeft 1s infinite; /* Adjust the animation properties as needed */
+  }
+  
+  @keyframes bounceRightToLeft {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-100%); /* Adjust the distance based on your requirements */
+    }
+    60% {
+      transform: translateX(-50%); /* Adjust the distance based on your requirements */
+    }
+  }
+  

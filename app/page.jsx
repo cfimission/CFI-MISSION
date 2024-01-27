@@ -1,7 +1,8 @@
+'use client'
 import Navbar from "@/components/Navbar";
 import RecentActivitiesSlider from "@/components/RecentActivitiesSlider";
 import { FaPrayingHands } from "react-icons/fa";
-
+import { motion } from 'framer-motion'
 export default function Home() {
   return (
     <div className="">
@@ -33,19 +34,27 @@ export default function Home() {
           className="object-cover object-center w-full h-full"
         />
       </div>
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
+  {/* versesection */}
+  <div id="section" className="flex justify-center p-5">
+    <div className="rounded-lg bg-[#e6e9f3] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth max-w-2xl">
+        <motion.div whileInView={{ x: [40, 0], transition: { duration: 1, ease: 'easeIn' } }}>
+      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
 
-      {/* versesection */}
-      <div id="section" className="flex justify-center p-5">
-        <div class="rounded-lg bg-[#e6e9f3]  p-4 my-10 flex flex-col  items-center justify-center shadow-inner-smooth max-w-2xl ">
-          <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Daily Verse
-          </h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400 text-md">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
-          </p>
-        </div>
-      </div>
+          Daily Verse
+      </h5>
+
+        </motion.div>
+        <motion.div whileInView={{ x: [40, 0], transition: { duration: 1, ease: 'easeIn' } }}>
+      <p className="font-normal text-gray-700 dark:text-gray-400 text-md">
+
+          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+      </p>
+      </motion.div>
+
+    </div>
+  </div>
+</motion.div>
 
       {/* recent activits */}
 
@@ -58,8 +67,11 @@ export default function Home() {
         id="section"
         className="flex justify-around p-5 md:flex-row flex-col gap-10"
       >
-        <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <motion.div whileInView={{ opacity: [0, 1], x: [0, 50], transition: { duration: 1, ease: 'easeInOut' } }}>
+      <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
           <a href="/about/sureshkumar">
+            
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
               We Pray For You
             </h5>
@@ -82,7 +94,7 @@ export default function Home() {
               >
                 About us
                 <svg
-                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -99,7 +111,12 @@ export default function Home() {
               </a>
             </div>
           </div>
+
         </div>
+      </motion.div>
+
+      <motion.div whileInView={{ opacity: [0, 1], x: [0, 50], transition: { duration: 1, ease: 'easeInOut' } }}>
+
         <div class=" md:max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
@@ -142,9 +159,14 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </motion.div >
+
       </div>
 
+
       {/* services */}
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
+
       <div
         className="flex justify-around p-28 md:flex-row flex-col items-center gap-4"
         id="section"
@@ -245,12 +267,15 @@ export default function Home() {
         </div>
       </div>
 
+      </motion.div >
+
+
       {/* prayer request */}
       <div className="flex justify-center gap-5 items-center flex-col pb-10">
         <h1 className=" text-4xl font-bold">Pray Request</h1>
         <button
           type="button"
-          class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-20 py-2.5 text-center me-2 mb-2"
+          class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-20 py-2.5 text-center me-2 mb-2 animate-bounce"
         >
           Send
         </button>

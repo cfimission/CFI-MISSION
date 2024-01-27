@@ -1,6 +1,8 @@
+'use client'
 import Navbar from "@/components/Navbar";
 import React from "react";
 import Link from "next/link";
+import { motion } from 'framer-motion'
 
 const cfimission = () => {
   const tempData = [
@@ -66,6 +68,8 @@ const cfimission = () => {
       <div className="flex justify-center items-center m-5 ">
         <div className="md:w-1/3 ">
           {tempData.map((item) => (
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
+            
             <div key={item.id} className="flex gap-x-3 ">
               <div className="w-16 text-end">
                 <span className="text-sm text-gray-500 dark:text-gray-400">{item.date}</span>
@@ -92,6 +96,8 @@ const cfimission = () => {
                 </div>
               </div>
             </div>
+      </motion.div>
+
           ))}
         </div>
       </div>
