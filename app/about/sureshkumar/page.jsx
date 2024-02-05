@@ -8,26 +8,28 @@ import axios from "axios";
 const SureshKumar = () => {
   const [aboutdata ,setAboutData] = useState()
   const [loading,setLoading] = useState(false)
-  const fetchabout = async()=>{
+  const fetchabout = async () => {
+    setLoading(true);
     try {
-      setLoading(true)
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/about'); 
-      setAboutData(response.data)
-      setLoading(false)
-      console.log(aboutdata)
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/about');
+      setAboutData(response.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
-  }
+  };
   useEffect(()=>{
     fetchabout()
   },[])
 
-if(loading){
-  return (
-  <h1>loading</h1>
-  )
-}
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+  
+  if (!aboutdata) {
+    return <h1>No data available</h1>;
+  }
   return (
     <div className="">
       <Navbar />
@@ -59,7 +61,7 @@ if(loading){
       <div className="flex justify-center items-center m-5 ">
         <div className="md:w-1/3 ">
           {aboutdata.map((item) => (
-      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }} key={item._id}>
+  <motion.div key={item._id || index} whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
 <div  className="flex gap-x-3 ">
               <div className="w-16 text-end">
