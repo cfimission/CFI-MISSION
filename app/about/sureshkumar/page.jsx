@@ -6,28 +6,20 @@ import { motion } from 'framer-motion'
 import axios from "axios";
 
 const SureshKumar = () => {
-  const [aboutdata ,setAboutData] = useState([])
-  const [loading,setLoading] = useState(false)
+  const [aboutdata ,setAboutData] = useState()
   const fetchabout = async()=>{
     try {
-      setLoading(true)
-      const response = await axios.get('http://localhost:3000/about?category=Suresh_Kumar'); 
-      setLoading(false)
-console.log(response)
+      const response = await axios.get('http://localhost:3000/about'); 
       setAboutData(response.data)
+      console.log(aboutdata)
     } catch (error) {
       console.log(error)
     }
   }
   useEffect(()=>{
     fetchabout()
- 
   },[])
-  if(loading){
-    return(
-      <h1>Loading</h1>
-    )
-  }
+
 
   return (
     <div className="">
@@ -59,14 +51,14 @@ console.log(response)
 
       <div className="flex justify-center items-center m-5 ">
         <div className="md:w-1/3 ">
-          {aboutdata.map((item) => (
-      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
+          {tempData.map((item) => (
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }} key={item._id}>
 
-<div key={item._id} className="flex gap-x-3 ">
+<div  className="flex gap-x-3 ">
               <div className="w-16 text-end">
-              <span className="text-lg font-bold text-black dark:text-gray-400">{item.dayabout}</span>
+              <span className="text-lg font-bold text-black dark:text-gray-400">Birth</span>
 <br />
-                <span className="text-sm text-gray-500 dark:text-gray-400">{item.day}</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{item.date}</span>
               </div>
 
               <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
@@ -83,8 +75,8 @@ console.log(response)
                   {item.description}
                 </p>
 
-                <div className="flex gap-2 mt-2 flex-wrap">
-                  {item.ImageUrls.map((image, index) => (
+                <div className="flex gap-2 mt-2">
+                  {item.images.map((image, index) => (
                     <img key={index} src={image} alt={`Image ${index}`} className=" w-28 md:w-64 h-auto " />
                   ))}
                 </div>

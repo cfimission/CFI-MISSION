@@ -30,7 +30,7 @@ const Testimonials = () => {
 
       <div>
         {testimonials.map((items) => (
-          <div className=" p-5">
+          <div className=" p-5" key={items._id}>
             <motion.div
               whileInView={{
                 opacity: [0, 1],
