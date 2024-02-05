@@ -51,7 +51,7 @@ const SureshKumar = () => {
 
       <div className="flex justify-center items-center m-5 ">
         <div className="md:w-1/3 ">
-          {tempData.map((item) => (
+          {aboutdata.map((item) => (
       <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }} key={item._id}>
 
 <div  className="flex gap-x-3 ">
