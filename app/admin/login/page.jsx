@@ -15,7 +15,7 @@ const Login = () => {
       e.preventDefault(); // Prevent default form submission behavior
   
       try {
-        const response = await axios.post('https://cfi-mission-backend.vercel.app//login', {
+        const response = await axios.post('https://cfi-mission-backend.vercel.app/login', {
           username,  // Use the correct variable name
           password,  // Use the correct variable name
         });

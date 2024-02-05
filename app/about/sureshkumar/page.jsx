@@ -11,7 +11,7 @@ const SureshKumar = () => {
   const fetchabout = async()=>{
     try {
       setLoading(true)
-      const response = await axios.get('https://cfi-mission-backend.vercel.app//about'); 
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/about'); 
       setAboutData(response.data)
       setLoading(false)
       console.log(aboutdata)

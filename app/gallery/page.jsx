@@ -14,7 +14,7 @@ const Gallery = () => {
   const fetchGallery = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://cfi-mission-backend.vercel.app//gallery');
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/gallery');
       setData(response.data);
       // Initialize activeImages array with null for each set
       setActiveImages(response.data.map(() => null));

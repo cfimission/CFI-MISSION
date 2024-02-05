@@ -20,7 +20,7 @@ const About = () => {
   const fetchAboutData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://cfi-mission-backend.vercel.app//about/admin");
+      const response = await axios.get("http://localhost:3000/about/admin");
       setAboutData(response.data);
       setLoading(false);
       console.log(response);
@@ -53,7 +53,7 @@ const About = () => {
   const handleCreateAbout = async () => {
     try {
       setLoading(true);
-      await axios.post( "https://cfi-mission-backend.vercel.app//about", newAbout);
+      await axios.post( "http://localhost:3000/about", newAbout);
       setNewAbout({
         title: "",
         description: "",
@@ -77,7 +77,7 @@ const About = () => {
   const handlesUpdatAbout = async () => {
     try {
       setLoading(true);
-      await axios.put(`https://cfi-mission-backend.vercel.app//about/${selectedAbout._id}`, newAbout);
+      await axios.put(`http://localhost:3000/about/${selectedAbout._id}`, newAbout);
       setNewAbout({
         title: "",
         description: "",
@@ -101,7 +101,7 @@ const About = () => {
   // Handle delete about
   const handleDeleteAbout = async (id) => {
     try {
-      await axios.delete(`https://cfi-mission-backend.vercel.app//about/${id}`);
+      await axios.delete(`http://localhost:3000/about/${id}`);
       fetchAboutData();
     } catch (error) {
       console.error("Error deleting about data:", error);

@@ -10,7 +10,7 @@ const ContactForm = ({ onClose }) => {
 
   const handleContactSubmit = async () => {
     try {
-      const response = await axios.post('https://cfi-mission-backend.vercel.app//contact', {
+      const response = await axios.post('https://cfi-mission-backend.vercel.app/contact', {
         name: name,
         phoneNumber: phoneNumber,
       });
