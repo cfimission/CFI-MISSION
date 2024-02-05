@@ -37,16 +37,16 @@ export default function Home() {
       <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
   {/* versesection */}
   <div id="section" className="flex justify-center p-5">
-    <div className="rounded-lg bg-[#e6e9f3] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth max-w-2xl">
+    <div className="rounded-lg bg-[#e6e9f3] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
         <motion.div whileInView={{ x: [40, 0], transition: { duration: 1, ease: 'easeIn' } }}>
-      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 
           Daily Verse
       </h5>
 
         </motion.div>
         <motion.div whileInView={{ x: [40, 0], transition: { duration: 1, ease: 'easeIn' } }}>
-      <p className="font-normal text-gray-700 dark:text-gray-400 text-md">
+      <p className="font-normal text-gray-700 dark:text-gray-400 text-md text-xl">
 
           Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
       </p>
@@ -89,8 +89,8 @@ export default function Home() {
                 so far, in reverse chronological order.
               </p>
               <a
-                href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit"
+                href="http://localhost:3001/about/sureshkumar"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit "
               >
                 About us
                 <svg
@@ -116,17 +116,18 @@ export default function Home() {
       </motion.div>
 
       <motion.div whileInView={{ opacity: [0, 1], x: [0, 50], transition: { duration: 1, ease: 'easeInOut' } }}>
+      <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-        <div class=" md:max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <a href="/testimonials">
+            
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
-              God Bless You
+              We Pray For You
             </h5>
           </a>
 
           <div className="flex gap-5">
             <img
-              class="object-cover w-1/2 h-auto md:h-auto md:w-48 rounded-lg"
+              class="object-cover w-1/2  rounded-lg h-1/2 md:h-auto md:w-48"
               src="https://plus.unsplash.com/premium_photo-1664392455446-1e636959468b?q=80&w=1945&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
             />
@@ -136,12 +137,13 @@ export default function Home() {
                 so far, in reverse chronological order.
               </p>
               <a
-                href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit"
+                href="http://localhost:3001/about/sureshkumar"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit "
               >
-                Testimonials{" "}
+                
+Testimonials us
                 <svg
-                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  class="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -158,8 +160,12 @@ export default function Home() {
               </a>
             </div>
           </div>
+
         </div>
-      </motion.div >
+      </motion.div>
+
+
+
 
       </div>
 
