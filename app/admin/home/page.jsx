@@ -2,7 +2,7 @@
 import Navbar from "@/components/Admin/Navbar";
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-const home = () => {
+const Home = () => {
     const [homeEntries, setHomeEntries] = useState([]);
     const [loading,setLoading] = useState(false)
     const [newEntry, setNewEntry] = useState({
@@ -103,4 +103,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
