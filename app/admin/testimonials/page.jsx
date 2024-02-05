@@ -17,7 +17,7 @@ const Testimonials = () => {
   const fetchTestimonials = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:3000/testimonials');
+      const response = await axios.get('https://cfi-mission-backend.vercel.app//testimonials');
       setTestimonials(response.data);
       setLoading(false);
 
@@ -52,7 +52,7 @@ const Testimonials = () => {
   const handleCreateTestimonial = async () => {
     try {
       setLoading(true);
-      await axios.post('http://localhost:3000/testimonials', newTestimonial);
+      await axios.post('https://cfi-mission-backend.vercel.app//testimonials', newTestimonial);
       setNewTestimonial({
         title: '',
         description: '',
@@ -70,7 +70,7 @@ const Testimonials = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/testimonials/${id}`);
+      await axios.delete(`https://cfi-mission-backend.vercel.app//testimonials/${id}`);
       fetchTestimonials();
     } catch (error) {
       console.error('Error deleting testimonial:', error);
@@ -91,7 +91,7 @@ const Testimonials = () => {
     try {
       setLoading(true);
       
-      await axios.put(`http://localhost:3000/testimonials/${selectedTestimonial._id}`, newTestimonial);
+      await axios.put(`https://cfi-mission-backend.vercel.app//testimonials/${selectedTestimonial._id}`, newTestimonial);
       setSelectedTestimonial(null);
       setNewTestimonial({
         title: '',

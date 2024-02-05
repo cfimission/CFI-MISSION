@@ -11,7 +11,7 @@ const Contact = () => {
     // Fetch contacts data when the component mounts
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/contact');
+        const response = await axios.get('https://cfi-mission-backend.vercel.app//contact');
         setContacts(response.data);
       } catch (error) {
         console.error('Error fetching contacts:', error);

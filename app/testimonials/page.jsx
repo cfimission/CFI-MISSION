@@ -10,7 +10,7 @@ const Testimonials = () => {
   const fetchTestimonials = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:3000/testimonials");
+      const response = await axios.get("https://cfi-mission-backend.vercel.app//testimonials");
       setTestimonials(response.data);
       console.log(response.data);
       setLoading(false);
