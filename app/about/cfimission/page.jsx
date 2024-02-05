@@ -4,7 +4,7 @@ import React,{useState,useEffect} from "react";
 import Link from "next/link";
 import { motion } from 'framer-motion'
 import axios from "axios";
-const cfimission = () => {
+const Cfimission = () => {
   const [aboutdata ,setAboutData] = useState([])
   const [loading,setLoading] = useState(false)
   const fetchabout = async()=>{
@@ -99,4 +99,4 @@ const cfimission = () => {
   );
 };
 
-export default cfimission;
+export default Cfimission;

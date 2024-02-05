@@ -62,7 +62,7 @@ console.log(response)
           {aboutdata.map((item) => (
       <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
-<div key={item.id} className="flex gap-x-3 ">
+<div key={item._id} className="flex gap-x-3 ">
               <div className="w-16 text-end">
               <span className="text-lg font-bold text-black dark:text-gray-400">{item.dayabout}</span>
 <br />
