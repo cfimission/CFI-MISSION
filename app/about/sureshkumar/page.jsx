@@ -7,10 +7,13 @@ import axios from "axios";
 
 const SureshKumar = () => {
   const [aboutdata ,setAboutData] = useState()
+  const [loading,setLoading] = useState(false)
   const fetchabout = async()=>{
     try {
+      setLoading(true)
       const response = await axios.get('http://localhost:3000/about'); 
       setAboutData(response.data)
+      setLoading(false)
       console.log(aboutdata)
     } catch (error) {
       console.log(error)
@@ -20,7 +23,9 @@ const SureshKumar = () => {
     fetchabout()
   },[])
 
-
+if(loading){
+  return <h1>loading</h1>
+}
   return (
     <div className="">
       <Navbar />
