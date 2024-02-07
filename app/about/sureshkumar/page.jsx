@@ -7,30 +7,29 @@ import axios from "axios";
 import Loading from "@/components/Loading";
 
 const SureshKumar = () => {
-  const [aboutdata ,setAboutData] = useState()
+  const [aboutdata ,setAboutData] = useState([])
   const [loading,setLoading] = useState(false)
-  const fetchabout = async () => {
-    setLoading(true);
+  const fetchabout = async()=>{
     try {
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/about?category=Suresh_Kumar');
-      setAboutData(response.data);
+      setLoading(true)
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/about?category=Suresh_Kumar'); 
+      setAboutData(response.data)
+      setLoading(false)
+
     } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
+      console.log(error)
     }
-  };
+  }
   useEffect(()=>{
     fetchabout()
+ 
   },[])
+  if(loading){
+    return(
+      <Loading/>
+    )
+  }
 
-  if (loading) {
-    return <Loading/>
-  }
-  
-  if (!aboutdata) {
-    return <h1>No data available</h1>;
-  }
   return (
     <div className="">
       <Navbar />
@@ -86,7 +85,7 @@ const SureshKumar = () => {
                 </p>
 
                 <div className="flex gap-2 mt-2">
-                  {item.images.map((image, index) => (
+                {item.ImageUrls.map((image, index) => (
                     <img key={index} src={image} alt={`Image ${index}`} className=" w-28 md:w-64 h-auto " />
                   ))}
                 </div>
