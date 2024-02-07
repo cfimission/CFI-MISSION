@@ -12,7 +12,7 @@ const SureshKumar = () => {
   const fetchabout = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/about');
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/about?category=Suresh_Kumar');
       setAboutData(response.data);
     } catch (error) {
       console.log(error);

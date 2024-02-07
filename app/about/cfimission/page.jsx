@@ -11,10 +11,11 @@ const Cfimission = () => {
   const fetchabout = async()=>{
     try {
       setLoading(true)
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/about?category=Suresh_Kumar'); 
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/about?category=Cfi_Mission'); 
+console.log(response)
+      setAboutData(response.data)
       setLoading(false)
 
-      setAboutData(response.data)
     } catch (error) {
       console.log(error)
     }
