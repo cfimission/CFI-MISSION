@@ -4,6 +4,7 @@ import React,{useState,useEffect} from "react";
 import Link from "next/link";
 import { motion } from 'framer-motion'
 import axios from "axios";
+import Loading from "@/components/Loading";
 const Cfimission = () => {
   const [aboutdata ,setAboutData] = useState([])
   const [loading,setLoading] = useState(false)
@@ -24,7 +25,7 @@ const Cfimission = () => {
   },[])
   if(loading){
     return(
-      <h1>Loading</h1>
+      <Loading/>
     )
   }
 

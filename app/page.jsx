@@ -1,9 +1,32 @@
 'use client'
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import RecentActivitiesSlider from "@/components/RecentActivitiesSlider";
 import { FaPrayingHands } from "react-icons/fa";
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import axios from "axios";
+import Loading from "@/components/Loading";
+
 export default function Home() {
+  const [recentImage, setRecentImage] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    setLoading(true); // Set loading state to true before making the request
+    try {
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/home');
+      setRecentImage(response.data[0].ImageUrls);
+      setLoading(false); // Set loading state to false after receiving the response
+    } catch (error) {
+      console.log(error);
+      setLoading(false); // Set loading state to false in case of error
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="">
       <Navbar />
@@ -39,14 +62,14 @@ export default function Home() {
   <div id="section" className="flex justify-center p-5">
     <div className="rounded-lg bg-[#e6e9f3] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
         <motion.div whileInView={{ x: [40, 0], transition: { duration: 1, ease: 'easeIn' } }}>
-      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 ">
 
           Daily Verse
       </h5>
 
         </motion.div>
         <motion.div whileInView={{ x: [40, 0], transition: { duration: 1, ease: 'easeIn' } }}>
-      <p className="font-normal text-gray-700 dark:text-gray-400 text-md text-xl">
+      <p className="font-normal text-gray-900  text-md text-xl">
 
           Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
       </p>
@@ -59,15 +82,13 @@ export default function Home() {
       {/* recent activits */}
 
       <div id="section" className="p-10">
-        <RecentActivitiesSlider />
+        {loading ? <Loading /> : <RecentActivitiesSlider img={recentImage} />}
       </div>
-
       {/* other pages navigation cards */}
       <div
         id="section"
-        className="flex justify-around p-5 md:flex-row flex-col gap-10"
+        className="flex justify-around p-5 md:flex-row  flex-col gap-10 "
       >
-      <motion.div whileInView={{ opacity: [0, 1], x: [0, 50], transition: { duration: 1, ease: 'easeInOut' } }}>
       <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
           <a href="/about/sureshkumar">
@@ -89,7 +110,7 @@ export default function Home() {
                 so far, in reverse chronological order.
               </p>
               <a
-                href="http://localhost:3001/about/sureshkumar"
+                href="/about/sureshkumar"
                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit "
               >
                 About us
@@ -113,9 +134,7 @@ export default function Home() {
           </div>
 
         </div>
-      </motion.div>
 
-      <motion.div whileInView={{ opacity: [0, 1], x: [0, 50], transition: { duration: 1, ease: 'easeInOut' } }}>
       <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
           <a href="/testimonials">
@@ -137,7 +156,7 @@ export default function Home() {
                 so far, in reverse chronological order.
               </p>
               <a
-                href="http://localhost:3001/about/sureshkumar"
+                href="/testimonials"
                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit "
               >
                 
@@ -162,7 +181,6 @@ Testimonials us
           </div>
 
         </div>
-      </motion.div>
 
 
 

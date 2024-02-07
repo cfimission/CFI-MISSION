@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from 'framer-motion'
 import axios from "axios";
+import Loading from "@/components/Loading";
 
 const SureshKumar = () => {
   const [aboutdata ,setAboutData] = useState()
@@ -24,7 +25,7 @@ const SureshKumar = () => {
   },[])
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <Loading/>
   }
   
   if (!aboutdata) {

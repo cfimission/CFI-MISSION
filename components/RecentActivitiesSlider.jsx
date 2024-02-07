@@ -1,15 +1,16 @@
 'use client'
 import React, { useState, useEffect } from "react";
+import axios from 'axios'; // Import axios if not already imported
 import { motion } from "framer-motion";
 
-const RecentActivitiesSlider = () => {
-  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
+const RecentActivitiesSlider = ({ img }) => {
+  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4,5]);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleNext = () => {
     setPositionIndexes((prevIndexes) => {
       const updatedIndexes = prevIndexes.map(
-        (prevIndex) => (prevIndex + 1) % images.length
+        (prevIndex) => (prevIndex + 1) % img.length
       );
       return updatedIndexes;
     });
@@ -18,14 +19,9 @@ const RecentActivitiesSlider = () => {
   const handleImageSelect = (index) => {
     setSelectedImageIndex(index);
     setPositionIndexes((prevIndexes) =>
-      prevIndexes.map((_, i) => (i - index + images.length) % images.length)
+      prevIndexes.map((_, i) => (i - index + img.length) % img.length)
     );
   };
-
-
-  const images = ["https://plus.unsplash.com/premium_photo-1678233300991-77c08cbe4a4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1528724566146-ccc7905835c6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://plus.unsplash.com/premium_photo-1678197482532-2a58a5ff084d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1607098263775-e2cc11657839?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://plus.unsplash.com/premium_photo-1678388570933-f4254cbb741b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"];
-
-
 
   const positions = ["center", "left1", "left", "right", "right1"];
 
@@ -47,11 +43,10 @@ const RecentActivitiesSlider = () => {
 
   return (
     <div>
-  <h1 className=" text-center  text-3xl font-bold pb-5">Recent Activits</h1>
+      <h1 className="text-center text-3xl font-bold pb-5">Recent Activities</h1>
 
       <div className="flex items-center flex-col justify-center md:h-[50vh] h-[30vh] relative overflow-hidden mb-5">
-
-        {images.map((image, index) => (
+        {img.map((image, index) => (
           <motion.img
             key={index}
             src={image}
@@ -67,13 +62,12 @@ const RecentActivitiesSlider = () => {
               height: "auto", // Maintain aspect ratio
               cursor: "pointer",
               opacity:
-              positions[positionIndexes[index]] === "center"
-                ? 1
-                : positions[positionIndexes[index]] === "left1" ||
-                  positions[positionIndexes[index]] === "right1"
-                ? 0.7
-                : 0.4,
-          
+                positions[positionIndexes[index]] === "center"
+                  ? 1
+                  : positions[positionIndexes[index]] === "left1" ||
+                    positions[positionIndexes[index]] === "right1"
+                  ? 0.7
+                  : 0.4,
             }}
             onClick={() => handleImageSelect(index)}
           />

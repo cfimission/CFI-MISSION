@@ -1,5 +1,6 @@
 'use client'
 import ImageModal from "@/components/ImageModel";
+import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -35,7 +36,7 @@ const Gallery = () => {
   };
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <Loading/>
   }
 
   return (
