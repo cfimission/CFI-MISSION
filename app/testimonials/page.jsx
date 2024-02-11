@@ -41,7 +41,7 @@ const Testimonials = () => {
                 transition: { duration: 1, ease: "easeInOut" },
               }}
             >
-              <h5 className=" text-4xl font-bold tracking-wide text-gray-900 dark:text-white  uppercase text-center my-10 ">
+              <h5 className=" text-4xl font-bold tracking-wide text-gray-900  uppercase text-center my-10 ">
                 {items.title}
               </h5>
             </motion.div>
@@ -53,20 +53,19 @@ const Testimonials = () => {
                 transition: { duration: 1, ease: "easeInOut" },
               }}
             >
-              <div class="flex gap-5 justify-center flex-wrap">
-                {items.videoUrls.map((videoId, index) => (
-                  <div key={index}>
-                    <iframe
-                      width="460"
-                      height="215"
-                      src={`https://www.youtube.com/embed/${videoId}`}
-                      title={`YouTube Video ${index + 1}`}
-                      frameBorder="0"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                ))}
-              </div>
+             <div className="flex flex-wrap justify-center gap-5">
+  {items.videoUrls.map((videoId, index) => (
+    <div key={index} class="aspect-w-16 aspect-h-9">
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={`YouTube Video ${index + 1}`}
+        frameBorder="0"
+        allowFullScreen
+        class="w-full h-full lg:w-[460px] lg:h-[215px]"
+      ></iframe>
+    </div>
+  ))}
+</div>
             </motion.div>
           </div>
         ))}
