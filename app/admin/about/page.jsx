@@ -9,6 +9,7 @@ const About = () => {
   const [selectedAbout, setSelectedAbout] = useState(null);
 
   const [newAbout, setNewAbout] = useState({
+    sno:"",
     title: "",
     description: "",
     ImageUrls: [],
@@ -20,7 +21,7 @@ const About = () => {
   const fetchAboutData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(" https://cfi-mission-backend.vercel.app/about/admin");
+      const response = await axios.get("https://cfi-mission-backend.vercel.app/about/admin");
       setAboutData(response.data);
       setLoading(false);
       console.log(response);
@@ -53,8 +54,9 @@ const About = () => {
   const handleCreateAbout = async () => {
     try {
       setLoading(true);
-      await axios.post( " https://cfi-mission-backend.vercel.app/about", newAbout);
+      await axios.post( "https://cfi-mission-backend.vercel.app/about", newAbout);
       setNewAbout({
+        sno:"",
         title: "",
         description: "",
         ImageUrls: [], // Fix the property name to ImageUrls
@@ -77,8 +79,9 @@ const About = () => {
   const handlesUpdatAbout = async () => {
     try {
       setLoading(true);
-      await axios.put(` https://cfi-mission-backend.vercel.app/about/${selectedAbout._id}`, newAbout);
+      await axios.put(`https://cfi-mission-backend.vercel.app/about/${selectedAbout._id}`, newAbout);
       setNewAbout({
+        sno:"",
         title: "",
         description: "",
         ImageUrls: [], // Fix the property name to ImageUrls
@@ -101,7 +104,7 @@ const About = () => {
   // Handle delete about
   const handleDeleteAbout = async (id) => {
     try {
-      await axios.delete(` https://cfi-mission-backend.vercel.app/about/${id}`);
+      await axios.delete(`https://cfi-mission-backend.vercel.app/about/${id}`);
       fetchAboutData();
     } catch (error) {
       console.error("Error deleting about data:", error);
@@ -115,6 +118,7 @@ const About = () => {
 
       setSelectedAbout(selected);
       setNewAbout({
+        sno:selected.sno || '',
         title: selected.title || '',
         description: selected.description || '',
         ImageUrls: selected.ImageUrls || [],
@@ -134,6 +138,9 @@ const About = () => {
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
+                  <th scope="col" className="px-6 py-3">
+                      Sno
+                    </th>
                     <th scope="col" className="px-6 py-3">
                       Title
                     </th>
@@ -166,6 +173,8 @@ const About = () => {
                       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                       key={data._id}
                     >
+                      <td className="px-6 py-4">{data.sno}</td>
+
                       <th
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -204,6 +213,15 @@ const About = () => {
             <div className=" p-10 w-screen">
               <h1 className="text-2xl font-bold mb-4">New About Entry</h1>
               <form className="flex flex-col ">
+              <label htmlFor="title">Sno:</label>
+                <input
+                  type="text"
+                  id="sno"
+                  name="sno"
+                  value={newAbout.sno}
+                  onChange={handleInputChange}
+                  className="w-full block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                />
                 <label htmlFor="title">Title:</label>
                 <input
                   type="text"
