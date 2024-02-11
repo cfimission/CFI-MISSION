@@ -85,7 +85,7 @@ const SureshKumar = () => {
                   {item.description}
                 </p>
 
-                <div className="flex gap-2 mt-2">
+                <div className="flex gap-2 mt-2 flex-wrap">
                 {item.ImageUrls.map((image, index) => (
                     <img key={index} src={image} alt={`Image ${index}`} className=" w-28 md:w-64 h-auto " />
                   ))}
