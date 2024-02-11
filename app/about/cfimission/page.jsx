@@ -65,8 +65,9 @@ const Cfimission = () => {
             
             <div  className="flex gap-x-3 ">
               <div className="w-16 text-end">
-              <span className="text-lg font-bold text-black dark:text-gray-400">{item.dayabout}</span>
-<br />
+              <div className="w-20  text-center">
+                <span className="text-lg font-bold text-black dark:text-gray-400 break-words">{item.dayabout}</span>
+                </div>
                 <span className="text-sm text-gray-500 dark:text-gray-400">{item.day}</span>
               </div>
 

@@ -65,9 +65,10 @@ const SureshKumar = () => {
 
 <div  className="flex gap-x-3 ">
               <div className="w-16 text-end">
-              <span className="text-lg font-bold text-black dark:text-gray-400">{item.dayabout}</span>
-<br />
-                <span className="text-sm text-gray-500 dark:text-gray-400">{item.date}</span>
+                <div className="w-20  text-center">
+                <span className="text-lg font-bold text-black dark:text-gray-400 break-words">{item.dayabout}</span>
+                </div>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{item.day}</span>
               </div>
 
               <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
