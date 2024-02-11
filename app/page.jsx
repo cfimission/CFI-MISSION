@@ -9,17 +9,20 @@ import Loading from "@/components/Loading";
 
 export default function Home() {
   const [recentImage, setRecentImage] = useState([]);
+  const [bannerImage,setBannerImage] = useState()
+
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
-    setLoading(true); // Set loading state to true before making the request
+    setLoading(true); 
     try {
       const response = await axios.get('https://cfi-mission-backend.vercel.app/home');
-      setRecentImage(response.data[0].ImageUrls);
-      setLoading(false); // Set loading state to false after receiving the response
+      setRecentImage(response.data.recentImages)
+      setBannerImage(response.data.bannerImage)
+      setLoading(false);
     } catch (error) {
       console.log(error);
-      setLoading(false); // Set loading state to false in case of error
+      setLoading(false);
     }
   };
 
@@ -52,7 +55,7 @@ export default function Home() {
         </div>
 
         <img
-          src="https://images.unsplash.com/photo-1574642631319-ee4e726c5888?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={bannerImage}
           alt="Hero Image"
           className="object-cover object-center w-full h-full"
         />

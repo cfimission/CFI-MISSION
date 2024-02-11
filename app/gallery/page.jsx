@@ -3,13 +3,12 @@ import ImageModal from "@/components/ImageModel";
 import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-// ... (existing imports)
-
 const Gallery = () => {
+
   const [data, setData] = useState([]);
   const [activeImages, setActiveImages] = useState([]); // Use an array to store active images for each set
-
   const [loading, setLoading] = useState(false);
 
   const fetchGallery = async () => {
@@ -65,9 +64,15 @@ const Gallery = () => {
                   </div>
                 ))}
               </div>
-            </div>
+              <Link  href={`/gallery/${info._id}`}
+  className="w-full bg-gradient-to-r from-blue-900 to-blue-500 rounded-md text-white font-bold uppercase py-2 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-900 transition duration-300 text-center" onPaste={()=>router.push('/gallery/viewmore')}
+>
+  View More
+</Link>            
+</div>
           ))}
         </div>
+
       </div>
     </div>
   );

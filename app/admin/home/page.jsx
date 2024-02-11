@@ -12,7 +12,8 @@ const Home = () => {
       const fetchHomeEntries = async () => {
         try {
           setLoading(true)
-          const response = await axios.get('https://cfi-mission-backend.vercel.app/home'); 
+          const response = await axios.get('http://localhost:9000/home/admin'); 
+          console.log(response)
           setHomeEntries(response.data);
           setNewEntry({ ImageUrls: response.data[0]?.ImageUrls ,id:response.data[0]?._id}); // Set to the first entry's ImageUrls, or an empty array if no entries
           setLoading(false)
