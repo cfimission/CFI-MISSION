@@ -35,20 +35,21 @@ const Page = ({ params }) => {
         <Loading />
       ) : data ? (
         <div className="container mx-auto py-8">
-            <motion.div whileInView={{ opacity: [0, 1], x: [0, 100], transition: { duration: 1, ease: 'easeInOut' } }}>
+            <motion.div whileInView={{ opacity: [0, 1], y: [10, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
-            <h1 className="text-3xl font-bold mb-4">{data.title}</h1>
-            <p className="text-gray-700 mb-4">{data.description}</p>
+            <h1 className="text-3xl font-bold mb-4 px-5">{data.title}</h1>
+            <p className="text-gray-700 mb-4 px-5">{data.description}</p>
 
           </motion.div>
 
             <div className="flex flex-wrap gap-10 justify-center">
               {data.ImageUrls.map((imageUrl, index) => (
                 <motion.img
+                whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}
                   key={index}
                   src={imageUrl}
                   alt={`Image ${index + 1}`}
-                  className="rounded-lg w-auto h-64"
+                  className="w-auto h-64 p-2 "
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
