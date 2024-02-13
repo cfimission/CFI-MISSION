@@ -6,6 +6,7 @@ import { FaPrayingHands } from "react-icons/fa";
 import { motion } from 'framer-motion';
 import axios from "axios";
 import Loading from "@/components/Loading";
+import Link from "next/link";
 
 export default function Home() {
   const [recentImage, setRecentImage] = useState([]);
@@ -14,8 +15,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
-    setLoading(true); 
     try {
+    setLoading(true); 
       const response = await axios.get('https://cfi-mission-backend.vercel.app/home');
       setRecentImage(response.data.recentImages)
       setBannerImage(response.data.bannerImage)
@@ -29,6 +30,10 @@ export default function Home() {
   useEffect(() => {
     fetchData();
   }, []);
+  if (loading) {
+    return <Loading/>
+  }
+
 
   return (
     <div className="">
@@ -262,6 +267,7 @@ Testimonials us
         </div>
 
         <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff] justify-center">
+          <Link href='/services'>
           <p
             style={{
               WebkitTextStroke: "1px gray",
@@ -291,6 +297,7 @@ Testimonials us
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
+          </Link>
         </div>
       </div>
 
