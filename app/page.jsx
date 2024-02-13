@@ -41,7 +41,7 @@ export default function Home() {
       {/* herosection */}
       <div
         id="section"
-        className="relative h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
+        className="relative md:h-screen  bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
@@ -97,6 +97,8 @@ export default function Home() {
         id="section"
         className="flex justify-around p-5 md:flex-row  flex-col gap-10 "
       >
+        <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
+
       <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
           <a href="/about/sureshkumar">
@@ -142,6 +144,9 @@ export default function Home() {
           </div>
 
         </div>
+        </motion.div >
+
+        <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
       <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
@@ -190,6 +195,7 @@ Testimonials us
 
         </div>
 
+        </motion.div >
 
 
 
@@ -197,21 +203,23 @@ Testimonials us
 
 
       {/* services */}
-      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
       <div
         className="flex justify-around p-28 md:flex-row flex-col items-center gap-4"
         id="section"
       >
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
+
         <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff]">
           <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
           <p className="font-bold text-2xl group-hover:text-black text-white/80">
-            Telugu services
+          Sunday Service
           </p>
-          <p className="group-hover:text-black text-white/80 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            tempore
+          <p className="group-hover:text-black text-white/80 text-md">
+          * Marteru - 8:00AM
+          <br />
+* Palakollu - 10:00AM
           </p>
           {/* <p
         style={{
@@ -223,16 +231,20 @@ Testimonials us
         09
       </p> */}
         </div>
+      </motion.div >
+
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
         <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff]">
           <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
           <p className="font-bold text-2xl group-hover:text-black text-white/80">
-            Telugu services
+          Communion Service
           </p>
-          <p className="group-hover:text-black text-white/80 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            tempore
+          <p className="group-hover:text-black text-white/80 text-md">
+          * Marteru - 1st Sunday 10:00AM
+          <br />
+* Palakollu - 2nd Sunday 10:00AM
           </p>
           {/* <p
         style={{
@@ -244,16 +256,21 @@ Testimonials us
         09
       </p> */}
         </div>
+      </motion.div >
+
+      <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
         <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff]">
           <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
           <p className="font-bold text-2xl group-hover:text-black text-white/80">
-            Telugu services
-          </p>
-          <p className="group-hover:text-black text-white/80 text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-            tempore
+
+          Mid-Week Service
+                    </p>
+          <p className="group-hover:text-black text-white/80 text-md">
+          * Marteru - Wednesday 7:00PM
+          <br />
+* Palakollu - Tuesday 9:00AM
           </p>
           {/* <p
         style={{
@@ -265,6 +282,9 @@ Testimonials us
         09
       </p> */}
         </div>
+      </motion.div >
+
+        <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
         <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff] justify-center">
           <Link href='/services'>
@@ -299,9 +319,10 @@ Testimonials us
           </svg>
           </Link>
         </div>
+      </motion.div >
+
       </div>
 
-      </motion.div >
 
 
       {/* prayer request */}
