@@ -108,16 +108,15 @@ export default function Home() {
             </h5>
           </a>
 
-          <div className="flex gap-5">
+          <div className="flex gap-5 flex-col md:flex-row justify-center items-center">
             <img
-              class="object-cover w-1/2  rounded-lg h-1/2 md:h-auto md:w-48"
-              src="https://plus.unsplash.com/premium_photo-1664392455446-1e636959468b?q=80&w=1945&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="object-cover md:w-1/2 w-full  rounded-lg h-1/2 "
+              src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1707910827/2_x2iri8.jpg"
               alt=""
             />
             <div className="flex flex-col justify-around">
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
+              Welcome, Dear beloved. These are uncertain times filled with anxiety and suffering, and you may be wrestling with difficult situations, or perhaps need a message of encouragement or hope. May we offer a prayer for you and your concerns?
               </p>
               <a
                 href="/about/sureshkumar"
@@ -148,7 +147,7 @@ export default function Home() {
 
         <motion.div whileInView={{ opacity: [0, 1], y: [100, 0], transition: { duration: 1, ease: 'easeInOut' } }}>
 
-      <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full ">
 
           <a href="/testimonials">
             
@@ -157,16 +156,17 @@ export default function Home() {
             </h5>
           </a>
 
-          <div className="flex gap-5">
+          <div className="flex gap-5 flex-col md:flex-row justify-center items-center  h-full">
             <img
-              class="object-cover w-1/2  rounded-lg h-1/2 md:h-auto md:w-48"
-              src="https://plus.unsplash.com/premium_photo-1664392455446-1e636959468b?q=80&w=1945&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                       class="object-cover md:w-96 w-full  rounded-lg   "
+
+              src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1704534678/swykch8cwcfatoljsptf.jpg"
               alt=""
             />
             <div className="flex flex-col justify-around">
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
+              The true light that gives light to everyone was coming into the world. - John 1:9
+You are the light of the world. Matthew 5:14
               </p>
               <a
                 href="/testimonials"
