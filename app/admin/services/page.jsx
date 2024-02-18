@@ -6,11 +6,14 @@ import axios from 'axios'; // Import axios for making HTTP requests
 const Page = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
+  const validCategories = ["Weekly","Monthly","Other"]; 
 
   const [formData, setFormData] = useState({
     sno: '',
     title: '',
-    description: ''
+    description: '',
+    logo: '', // Add logo field to formData
+    category: '' // Add category field to formData
   });
 
   const fetchServices = async () => {
@@ -32,7 +35,7 @@ const Page = () => {
         await axios.post('https://cfi-mission-backend.vercel.app/services', formData);
       }
       fetchServices();
-      setFormData({ sno: '', title: '', description: '' });
+      setFormData({ sno: '', title: '', description: '', logo: '', category: '' }); // Reset fields after submission
     } catch (error) {
       console.error('Error:', error);
     }
@@ -58,8 +61,8 @@ const Page = () => {
   return (
     <div>
       <Navbar />
-      <div className='flex flex-wrap'>
-        <div className='w-3/5 bg-red-500 h-full'>
+      <div className='flex flex-wrap '>
+        <div className='w-3/5 bg-red-500 h-full overflow-scroll'>
           <div>
             <table className='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
               {/* Table Header */}
@@ -73,6 +76,12 @@ const Page = () => {
                   </th>
                   <th scope='col' className='px-6 py-3'>
                     description
+                  </th>
+                  <th scope='col' className='px-6 py-3'>
+                    logo
+                  </th>
+                  <th scope='col' className='px-6 py-3'>
+                    category
                   </th>
                   <th scope='col' className='px-6 py-3'>
                     update
@@ -89,6 +98,8 @@ const Page = () => {
                     <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.sno}</td>
                     <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.title}</td>
                     <td className='px-6 py-4'>{service.description}</td>
+                    <td className='px-6 py-4'>{service.logo}</td>
+                    <td className='px-6 py-4'>{service.category}</td>
                     <td className='px-6 py-4'>
                       <button onClick={() => handleEdit(service)}>update</button>
                     </td>
@@ -135,6 +146,31 @@ const Page = () => {
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   className='w-full block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
                 ></textarea>
+
+                <label htmlFor='logo'>Logo URL:</label>
+                <input
+                  type='text'
+                  id='logo'
+                  name='logo'
+                  value={formData.logo}
+                  onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
+                  className='w-full block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+                />
+
+                <label htmlFor='category'>Category:</label>
+                <select
+                  id='category'
+                  name='category'
+                  value={formData.category}
+                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  className='w-full block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
+                >
+                  <option value=''>Select a category</option>
+                  {validCategories.map(category => (
+                    <option key={category} value={category}>{category}</option>
+                  ))}
+                </select>
+
                 <div className='flex justify-center'>
                   <button
                     type='submit'
