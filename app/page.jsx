@@ -87,14 +87,14 @@ export default function Home() {
       >
         {/* versesection */}
         <div id="section" className="flex justify-center p-5">
-          <div className="rounded-lg bg-[#e6e9f3] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
+          <div className="rounded-lg bg-purple-700  p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
             <motion.div
               whileInView={{
                 x: [40, 0],
                 transition: { duration: 1, ease: "easeIn" },
               }}
             >
-              <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 ">
+              <h5 className="mb-2 text-4xl font-bold tracking-tight text-white ">
                 Daily Verse
               </h5>
             </motion.div>
@@ -104,7 +104,7 @@ export default function Home() {
                 transition: { duration: 1, ease: "easeIn" },
               }}
             >
-              <p className="font-normal text-gray-900  text-md text-xl">
+              <p className="font-normal text-white  text-md text-xl">
                 Here are the biggest enterprise technology acquisitions of 2021
                 so far, in reverse chronological order.
               </p>
@@ -130,9 +130,9 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full">
+          <div class="max-w-2xl p-6 bg-purple-700 border border-purple-500 rounded-lg shadow  h-full">
             <a href="/about/sureshkumar">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
                 We Pray For You
               </h5>
             </a>
@@ -144,7 +144,7 @@ export default function Home() {
                 alt=""
               />
               <div className="flex flex-col justify-around">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-white ">
                   Welcome, Dear beloved. These are uncertain times filled with
                   anxiety and suffering, and you may be wrestling with difficult
                   situations, or perhaps need a message of encouragement or
@@ -152,7 +152,7 @@ export default function Home() {
                 </p>
                 <a
                   href="/about/sureshkumar"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit "
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-white  hover:text-white rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300  w-fit "
                 >
                   About us
                   <svg
@@ -183,9 +183,9 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-full ">
+          <div class="max-w-2xl p-6 bg-purple-700 border border-purple-500 rounded-lg shadow  h-full ">
             <a href="/testimonials">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
                 We Pray For You
               </h5>
             </a>
@@ -198,14 +198,14 @@ export default function Home() {
                 alt=""
               />
               <div className="flex flex-col justify-around">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-white ">
                   The true light that gives light to everyone was coming into
                   the world. - John 1:9 You are the light of the world. Matthew
                   5:14
                 </p>
                 <a
                   href="/testimonials"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-fit "
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-white hover:text-white rounded-lg hover:bg-purple-900 focus:ring-4 focus:outline-none focus:ring-blue-300  w-fit "
                 >
                   Testimonials us
                   <svg
@@ -243,7 +243,7 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff]">
+          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
             <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
             <p className="font-bold text-2xl group-hover:text-black text-white/80">
@@ -272,7 +272,7 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff]">
+          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
             <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
             <p className="font-bold text-2xl group-hover:text-black text-white/80">
@@ -301,7 +301,7 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff]">
+               <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
             <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
             <p className="font-bold text-2xl group-hover:text-black text-white/80">
@@ -330,11 +330,11 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-black flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#ffffff] justify-center">
+          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
             <Link href="/services">
               <p
                 style={{
-                  WebkitTextStroke: "1px gray",
+                  WebkitTextStroke: "1px white",
                   WebkitTextFillColor: "transparent",
                 }}
                 className="text-4xl font-bold "
@@ -366,7 +366,8 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {showContactForm && <ContactForm onClose={closeContactForm} />}
-      <PrayerRequest onContactFormOpen={openContactForm} />    </div>
+      {/* {showContactForm && <ContactForm onClose={closeContactForm} />}
+      <PrayerRequest onContactFormOpen={openContactForm} />     */}
+      </div>
   );
 }
