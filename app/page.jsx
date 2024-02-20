@@ -243,7 +243,7 @@ God Bless You
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
+          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
             <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
             <p className="font-bold text-2xl group-hover:text-black text-white/80">
@@ -272,7 +272,7 @@ God Bless You
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
+          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
             <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
             <p className="font-bold text-2xl group-hover:text-black text-white/80">
@@ -301,7 +301,7 @@ God Bless You
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-               <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
+               <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
             <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
 
             <p className="font-bold text-2xl group-hover:text-black text-white/80">
@@ -330,7 +330,7 @@ God Bless You
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff]">
+          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
             <Link href="/services">
               <p
                 style={{
