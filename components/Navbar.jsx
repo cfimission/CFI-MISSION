@@ -70,7 +70,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/"
-                                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Home
                             </Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/about/sureshkumar"
-                                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 About
                             </Link>
@@ -86,7 +86,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/testimonials"
-                                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Testimonials
                             </Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/gallery"
-                                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Gallery
                             </Link>
@@ -102,7 +102,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/services"
-                                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Services
                             </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/contact"
-                                className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-900 md:p-0"
+                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0"
                             >
                                 Contact
                             </Link>
