@@ -34,7 +34,7 @@ const SureshKumar = () => {
 
       <div className="flex justify-center m-5  ">
         <Link href="/about/sureshkumar" className=" border-b-2 border-purple-600">
-          <h1 className=" text-lg p-2 md:text-xl font-bold">About Pastor,</h1>
+          <h1 className=" text-lg p-2 md:text-xl font-bold">About Pastor</h1>
         </Link>
 
         <Link href="/about/cfimission" className=" border-b-2">
@@ -65,9 +65,9 @@ const SureshKumar = () => {
                   </span>
                 </div>
 
-                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 ">
+                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-purple-500 ">
                   <div className="relative z-10 w-7 h-7 flex justify-center items-center">
-                    <div className="w-2 h-2 rounded-full bg-gray-400 "></div>
+                    <div className="w-2 h-2 rounded-full bg-purple-700 "></div>
                   </div>
                 </div>
 
