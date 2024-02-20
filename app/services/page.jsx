@@ -36,7 +36,7 @@ const Services = () => {
 
       {validCategories.map((category) => (
         <div key={category}>
-          <h2 className="font-bold uppercase md:text-4xl mx-10 my-5 p-2 border-2  items-center  h-full border-black">
+          <h2 className="font-bold uppercase md:text-4xl mx-10 my-5 p-2 border-2  items-center  h-full border-purple-700 text-purple-700 text-center">
             {category} Services
           </h2>
 
@@ -46,10 +46,10 @@ const Services = () => {
               .map((service, index) => (
                 <div
                   key={index}
-                  className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow  flex flex-col justify-center items-center"
+                  className="max-w-sm p-6 bg-purple-700 text-white border border-gray-200 rounded-lg shadow  flex flex-col justify-center items-center"
                 >
                   <img src={service.logo} alt="" className="h-20 w-20" />
-                  <h1 className="text-xl font-bold mt-4">{service.title}</h1>
+                  <h1 className="md:text-xl text-md  font-bold mt-4">{service.title}</h1>
                   <div className="table-container max-h-52 overflow-y-auto">
                     <table className="table-auto mt-4 ">
                       <thead>

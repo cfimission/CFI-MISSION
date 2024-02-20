@@ -44,7 +44,7 @@ const Gallery = () => {
       <div className="flex justify-center items-center py-10  px-2">
         <div className="grid md:grid-cols-4 grid-cols-1 gap-10">
           {data.map((info, setIndex) => (
-            <div key={setIndex} className="grid gap-4 justify-center items-center align-middle w-full md:w-96 h-auto p-5  rounded-md bg-slate-100">
+            <div key={setIndex} className="grid gap-4 justify-center items-center align-middle w-full md:w-96 h-auto p-5  rounded-md bg-slate-100 border-purple-700 border-2">
               <div>
                 <img
                   className="h-auto w-full max-w-full rounded-lg object-cover object-center"
@@ -65,7 +65,7 @@ const Gallery = () => {
                 ))}
               </div>
               <Link  href={`/gallery/${info._id}`}
-  className="w-full bg-gradient-to-r from-blue-900 to-blue-500 rounded-md text-white font-bold uppercase py-2 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-900 transition duration-300 text-center" onPaste={()=>router.push('/gallery/viewmore')}
+  className="w-full bg-gradient-to-r from-purple-900 to-purple-500 rounded-md text-white font-bold uppercase py-2 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-900 transition duration-300 text-center" onPaste={()=>router.push('/gallery/viewmore')}
 >
   View More
 </Link>            

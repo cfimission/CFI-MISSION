@@ -186,7 +186,7 @@ export default function Home() {
           <div class="max-w-2xl p-6 bg-purple-700 border border-purple-500 rounded-lg shadow  h-full ">
             <a href="/testimonials">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
-                We Pray For You
+God Bless You
               </h5>
             </a>
 
@@ -366,8 +366,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* {showContactForm && <ContactForm onClose={closeContactForm} />}
-      <PrayerRequest onContactFormOpen={openContactForm} />     */}
+      <PrayerRequest />    
       </div>
   );
 }

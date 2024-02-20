@@ -1,67 +1,90 @@
-'use  client'
+'use client'
 import React, { useState } from 'react';
-import { IoMdCloseCircleOutline } from "react-icons/io";
 import axios from 'axios';
-import { MdOutlineDoneOutline } from "react-icons/md";
-import Link from 'next/link';
-const ContactForm = ({ onClose }) => {
-  const [name, setName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [submitDone, setSubmitDone] = useState(false);
 
-  const handleContactSubmit = async () => {
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [contact, setContact] = useState('');
+  const [address, setAddress] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
-      const response = await axios.post('https://cfi-mission-backend.vercel.app/contact', {
-        name: name,
-        phoneNumber: phoneNumber,
-      });
+      const Number=8520800787
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${encodeURIComponent(Number)}&text=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0APhone:%20${encodeURIComponent(contact)}%0AMessage:%20${encodeURIComponent(message)}`;
+
+      window.location.href = whatsappURL;
       setSubmitDone(true);
-      console.log(response.data);
     } catch (error) {
-      console.error('Error submitting contact:', error);
+      console.error('Error sending message to WhatsApp:', error);
     }
   };
-
   return (
-    <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="bg-white p-8 rounded-lg">
-        {submitDone ? (
-         <div className="flex flex-col items-center space-y-4 relative">
-         <button type="button" onClick={onClose} className="absolute top-0 right-0 p-2"><IoMdCloseCircleOutline size={20} /></button>
-         <MdOutlineDoneOutline color='green' size={40} />
-         <p>Contact form submitted successfully!</p>
-       </div>
-        ) : (
-          <form className="space-y-4">
-            <div className='flex justify-between pb-5'>
-              <h1 className='font-bold'>Contact us</h1>
-              <button type="button" onClick={onClose}><IoMdCloseCircleOutline size={20} /></button>
-            </div>
-            <div>
-              <label htmlFor="name-input" className="block mb-2 text-sm font-medium text-gray-900">Name</label>
-              <input
-                type="text"
-                id="name-input"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              />
-            </div>
-            <div className='pb-5'>
-              <label htmlFor="phone-input" className="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-              <input
-                type="tel"
-                id="phone-input"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              />
-            </div>
-            <Link href='' onClick={handleContactSubmit} className="bg-black text-white px-4 py-2 rounded-md">Submit</Link>
-          </form>
-        )}
-      </div>
+    <div className=" mx-auto md:w-1/2 mt-10 p-6 bg-purple-700 text-white rounded-lg shadow-lg">
+      <form onSubmit={handleSubmit}>
+        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-white font-semibold mb-2">Name</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-white font-semibold mb-2">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="contact" className="block text-white font-semibold mb-2">Contact</label>
+          <input
+            type="text"
+            id="contact"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="address" className="block text-white font-semibold mb-2">Address</label>
+          <input
+            type="text"
+            id="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="message" className="block text-white font-semibold mb-2">Message</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="w-full bg-black text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-black transition duration-300">Send</button>
+      </form>
     </div>
   );
 };
+
 export default ContactForm;

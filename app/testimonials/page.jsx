@@ -41,7 +41,7 @@ const Testimonials = () => {
                 transition: { duration: 1, ease: "easeInOut" },
               }}
             >
-              <h5 className=" text-4xl font-bold tracking-wide text-gray-900  uppercase text-center my-10 ">
+              <h5 className=" text-4xl font-bold tracking-wide text-purple-700  uppercase text-center my-10 ">
                 {items.title}
               </h5>
             </motion.div>

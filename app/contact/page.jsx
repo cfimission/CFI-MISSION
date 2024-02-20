@@ -6,24 +6,25 @@ import { FaFacebook, FaYoutube, FaPhone } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
 const Contact = () => {
   return (
     <div>
       <Navbar />
       <div>
         <div className="flex justify-center items-center gap-5  md:justify-around flex-wrap flex-col md:flex-row p-5">
-          <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 d items-center flex flex-col gap-5 justify-center">
+          <div class=" max-w-md md:w-1/5 md:h-96 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 d items-center flex flex-col gap-5 justify-center">
             <div className="flex  justify-around w-full">
-              <FaPhone size={40} color="blue" />
+              <div style={{ transform: "scaleX(-1)" }}>
+                <FaPhone size={40} color="blue" />
+              </div>
               <IoLogoWhatsapp size={50} color="green" />
             </div>
 
-            <h5 className="font-bold text-xl text-gray-700  ">
-              Mobile Number1 : 99494 77535
+            <h5 className="font-bold text-xl md:text-3xl text-purple-700  ">
+              99494 77535
             </h5>
-            <h5 className="font-bold text-xl text-gray-700  ">
-              Mobile Number2 : 83281 60127
-            </h5>
+
             <div className="flex gap-10">
               <Link href="https://www.youtube.com/channel/UCqL8AioSE_S4AAPgUVe1SJw">
                 <FaYoutube size={50} color="red" />
@@ -36,42 +37,51 @@ const Contact = () => {
               </Link>
             </div>
 
-            <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 class="mb-2 text-md font-normal tracking-tight text-gray-900 ">
               email
             </h5>
-            <p class="font-normal text-gray-700">cfimission@gmail.com</p>
+            <p class="font-bold text-purple-700 md:text-2xl">
+              cfimission@gmail.com
+            </p>
           </div>
 
           <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 d flex flex-col gap-5">
             <div className="text-center">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                 Address
               </h5>
             </div>
             <div className=" flex gap-x-2">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-700 ">
                 MARTERU
               </h5>
               <FaLocationDot size={25} color="red" className="animate-bounce" />
             </div>
 
-            <h5 className="font-bold text-md text-gray-700  ">
+            <h5 className="font-bold text-md text-black  ">
               CFI MISSION CHURCH 5-2 VANAMPALLI, NEGGIPUDI - MARTERU, WEST
               GODAVARI DIST - ANDHRA PRADESH PINCODE - 534122
             </h5>
             <div className=" flex gap-x-2">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-700 ">
                 PALAKOLLU
               </h5>
               <FaLocationDot size={25} color="red" className="animate-bounce" />
             </div>
 
-            <h5 className="font-bold text-md text-gray-700  ">
+            <h5 className="font-bold text-md text-black  ">
               CFI MISSION CHURCH PARVATHI NAGAR - CHERUVUPETA PALAKOLLU - ANDHRA
               PRADESH PINCODE - 534260
             </h5>
           </div>
         </div>
+
+        {/* contact form */}
+
+        <div>
+          <ContactForm />
+        </div>
+
         <div className="flex flex-col justify-cente md:items-center m-5 gap-5">
           <div className="md:w-1/2">
             <h1 className=" font-bold text-2xl text-black uppercase pb-5">
