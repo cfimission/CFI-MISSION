@@ -33,12 +33,12 @@ const SureshKumar = () => {
       <Navbar />
 
       <div className="flex justify-center m-5  ">
-        <Link href="/about/sureshkumar" className=" border-b-2 border-purple-600">
-          <h1 className=" text-lg p-2 md:text-xl font-bold">About Pastor</h1>
+        <Link href="/about/sureshkumar" className="bg-purple-400 rounded-l-lg">
+          <h1 className="  text-lg md:text-xl p-2 font-bold bg-purple-700 rounded-lg m-1 text-white text-center">About Pastor</h1>
         </Link>
 
-        <Link href="/about/cfimission" className=" border-b-2">
-          <h1 className=" text-lg md:text-xl p-2 font-bold  ">About Church</h1>
+        <Link href="/about/cfimission" className="bg-purple-400 rounded-r-lg">
+          <h1 className=" text-lg md:text-xl p-2 font-bold flex justify-center items-center text-white h-full  ">About Church</h1>
         </Link>
       </div>
 
