@@ -11,17 +11,25 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const Number=8520800787
-      const whatsappURL = `https://api.whatsapp.com/send?phone=${encodeURIComponent(Number)}&text=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0APhone:%20${encodeURIComponent(contact)}%0AMessage:%20${encodeURIComponent(message)}`;
-
+      const phoneNumber = '+919949477535';
+      let messageContent = `Name:%20${encodeURIComponent(name)}%0APhone:%20${encodeURIComponent(contact)}%0AAddress:%20${encodeURIComponent(address)}%0AMessage:%20${encodeURIComponent(message)}`;
+  
+      if (email) {
+        messageContent = `Name:%20${encodeURIComponent(name)}%0APhone:%20${encodeURIComponent(contact)}%0AEmail:%20${encodeURIComponent(email)}%0AAddress:%20${encodeURIComponent(address)}%0AMessage:%20${encodeURIComponent(message)}`;
+      }
+  
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${encodeURIComponent(phoneNumber)}&text=${messageContent}`;
+  
       window.location.href = whatsappURL;
       setSubmitDone(true);
     } catch (error) {
       console.error('Error sending message to WhatsApp:', error);
     }
   };
+  
+  
   return (
     <div className=" mx-auto md:w-1/2 mt-10 p-6 bg-purple-700 text-white rounded-lg shadow-lg">
       <form onSubmit={handleSubmit}>
@@ -45,7 +53,6 @@ const ContactForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black"
-            required
           />
         </div>
         <div className="mb-4">
@@ -71,7 +78,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="message" className="block text-white font-semibold mb-2">Message</label>
+          <label htmlFor="message" className="block text-white font-semibold mb-2">Drop your prayer request *</label>
           <textarea
             id="message"
             value={message}
