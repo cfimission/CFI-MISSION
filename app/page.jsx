@@ -76,7 +76,7 @@ useEffect(()=>{
       {/* herosection */}
       <div
         id="section"
-        className="relative h-screen"
+        className="relative md:h-screen"
       >
         <img
           src={bannerImage}
