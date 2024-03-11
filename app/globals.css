@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 
+body{
+  background-color: #F9E8C9;
+}
+/* h1,h2,h3,h4,h5,p{
+  color: #1D24CA !important;
+} */
+
 @layer utilities {
     .border-gradient {
       border: 2px solid;

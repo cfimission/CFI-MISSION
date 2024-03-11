@@ -14,14 +14,37 @@ export default function Home() {
   const [recentImage, setRecentImage] = useState([]);
   const [bannerImage, setBannerImage] = useState();
   const [showContactForm, setShowContactForm] = useState(false);
-
-  const openContactForm = () => {
-    setShowContactForm(true);
+  const [services, setServices] = useState([])
+  const [verses, setVerses] = useState();
+  const [currentVerseIndex, setCurrentVerseIndex] = useState(0);
+  const validCategories = ["Weekly", "Monthly", "Other"];
+  const fetchServices = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get("http://localhost:9000/services");
+      
+      const fetchedServices = [];
+  
+      for (const category of validCategories) {
+        const service = response.data.find(service => service.category === category);
+        if (service) {
+          fetchedServices.push(service);
+        }
+      }
+  
+      setServices(fetchedServices);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching services:", error);
+      setLoading(false);
+    }
   };
+useEffect(() => {
+  fetchServices();
+}, []);
 
-  const closeContactForm = () => {
-    setShowContactForm(false);
-  };
+  
+
 
 
   const [loading, setLoading] = useState(true);
@@ -29,11 +52,10 @@ export default function Home() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(
-        "https://cfi-mission-backend.vercel.app/home"
-      );
+      const response = await axios.get("http://localhost:9000/home");
       setRecentImage(response.data.recentImages);
       setBannerImage(response.data.bannerImage);
+      setVerses(response.data.verces); // Set the verces data
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -41,9 +63,9 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+useEffect(()=>{
+  fetchData()
+},[])
   if (loading) {
     return <Loading />;
   }
@@ -54,30 +76,13 @@ export default function Home() {
       {/* herosection */}
       <div
         id="section"
-        className="relative md:h-screen  bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"
+        className="relative h-screen"
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            {/* <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-              Your Hero Title
-            </h1>
-            <p className="text-lg md:text-xl mb-8">
-              Your compelling hero message goes here.
-            </p>
-            <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full">
-              Learn More
-            </button> */}
-          </div>
-        </div>
-
         <img
           src={bannerImage}
           alt="Hero Image"
-          className="object-cover object-center w-full h-full"
+          className="object-cover object-center  md:h-3/4 w-full h-auto "
         />
-      </div>
       <motion.div
         whileInView={{
           opacity: [0, 1],
@@ -87,31 +92,33 @@ export default function Home() {
       >
         {/* versesection */}
         <div id="section" className="flex justify-center p-5">
-          <div className="rounded-lg bg-purple-700  p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
-            <motion.div
-              whileInView={{
-                x: [40, 0],
-                transition: { duration: 1, ease: "easeIn" },
-              }}
-            >
-              <h5 className="mb-2 text-4xl font-bold tracking-tight text-white ">
-                Daily Verse
-              </h5>
-            </motion.div>
-            <motion.div
-              whileInView={{
-                x: [40, 0],
-                transition: { duration: 1, ease: "easeIn" },
-              }}
-            >
-              <p className="font-normal text-white  text-md text-xl">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-            </motion.div>
+            <div className="rounded-lg bg-[#1D24CA] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
+              <motion.div
+                whileInView={{
+                  x: [40, 0],
+                  transition: { duration: 1, ease: "easeIn" },
+                }}
+              >
+                <h5 className="mb-2 text-4xl font-bold tracking-tight text-white">
+                {verses.split(':')[0]}
+                </h5>
+              </motion.div>
+              <motion.div
+                whileInView={{
+                  x: [40, 0],
+                  transition: { duration: 1, ease: "easeIn" },
+                }}
+              >
+                <p className="font-normal text-white text-md text-xl">
+                {verses.split(':')[1]}
+                </p>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
+
+
 
       {/* recent activits */}
 
@@ -130,21 +137,21 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div class="max-w-2xl p-6 bg-purple-700 border border-purple-500 rounded-lg shadow  h-full">
+          <div className="max-w-2xl p-6 bg-[#1D24CA]   rounded-lg shadow  h-full">
             <a href="/about/sureshkumar">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
                 We Pray For You
               </h5>
             </a>
 
             <div className="flex gap-5 flex-col md:flex-row justify-center items-center  h-full">
               <img
-                class="object-cover md:w-96 w-full  rounded-lg   "
+                className="object-cover md:w-96 w-full  rounded-lg   "
                 src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1704534678/swykch8cwcfatoljsptf.jpg"
                 alt=""
               />
               <div className="flex flex-col justify-around">
-                <p class="mb-3 font-normal text-white ">
+                <p className="mb-3 font-normal text-white ">
                   Welcome, Dear beloved. These are uncertain times filled with
                   anxiety and suffering, and you may be wrestling with difficult
                   situations, or perhaps need a message of encouragement or
@@ -152,11 +159,11 @@ export default function Home() {
                 </p>
                 <a
                   href="/about/sureshkumar"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-white  hover:text-white rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300  w-fit "
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#000000] bg-white rounded-lg   w-fit "
                 >
                   About us
                   <svg
-                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
+                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -183,9 +190,9 @@ export default function Home() {
             transition: { duration: 1, ease: "easeInOut" },
           }}
         >
-          <div class="max-w-2xl p-6 bg-purple-700 border border-purple-500 rounded-lg shadow  h-full ">
+          <div className="max-w-2xl p-6 bg-[#1D24CA]  rounded-lg shadow  h-full ">
             <a href="/testimonials">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
 God Bless You
               </h5>
             </a>
@@ -193,23 +200,23 @@ God Bless You
             
                 <div className="flex gap-5 flex-col md:flex-row justify-center items-center">
               <img
-                class="object-cover md:w-1/2 w-full  rounded-lg h-1/2 "
+                className="object-cover md:w-1/2 w-full  rounded-lg h-1/2 "
                 src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1707910827/2_x2iri8.jpg"
                 alt=""
               />
               <div className="flex flex-col justify-around">
-                <p class="mb-3 font-normal text-white ">
+                <p className="mb-3 font-normal text-white ">
                   The true light that gives light to everyone was coming into
                   the world. - John 1:9 You are the light of the world. Matthew
                   5:14
                 </p>
                 <a
                   href="/testimonials"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-white hover:text-white rounded-lg hover:bg-purple-900 focus:ring-4 focus:outline-none focus:ring-blue-300  w-fit "
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-[#000000] bg-white hover:text-white rounded-lg hover:bg-[#1D24CA]-900 focus:ring-4 focus:outline-none focus:ring-blue-300  w-fit "
                 >
                   Testimonials us
                   <svg
-                    class="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
+                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -233,138 +240,52 @@ God Bless You
       {/* services */}
 
       <div
-        className="flex justify-around p-28 md:flex-row flex-col items-center gap-4"
+        className="flex justify-around p-28 md:flex-row flex-col items-center gap-"
         id="section"
       >
-        <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            y: [100, 0],
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
-        >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
-            <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
-
-            <p className="font-bold text-2xl group-hover:text-black text-white/80">
-              Sunday Service
-            </p>
-            <p className="group-hover:text-black text-white/80 text-md">
-              * Marteru - 8:00AM
-              <br />* Palakollu - 10:00AM
-            </p>
-            {/* <p
-        style={{
-          WebkitTextStroke: '1px gray',
-          WebkitTextFillColor: 'transparent',
-        }}
-        className="text-5xl font-bold self-end"
-      >
-        09
-      </p> */}
+      <div className="flex justify-center flex-wrap gap-x-16 gap-y-5">
+            {services
+              .sort((a, b) => a.sno - b.sno) 
+              .map((service, index) => (
+                <div
+                  key={index}
+                  className="max-w-sm p-6 bg-[#1D24CA] text-white rounded-lg shadow  flex flex-col justify-center items-center"
+                >
+                  <img src={service.logo} alt="" className="h-20 w-20" />
+                  <h1 className="md:text-xl text-md  font-bold mt-4">{service.title}</h1> 
+                  <div className="table-container max-h-52 overflow-y-auto">
+                    <table className="table-auto mt-4 ">
+                      <thead>
+                        <tr>
+                          <th className="px-4 py-2">Place</th>
+                          <th className="px-4 py-2">Day</th>
+                          <th className="px-4 py-2">Time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {service.description.split(";").map((detail, idx) => {
+                          const [place, day, time] = detail.split(" - ");
+                          return (
+                            <tr key={idx}>
+                              <td className="border px-4 py-2">{place}</td>
+                              <td className="border px-4 py-2">{day}</td>
+                              <td className="border px-4 py-2">{time}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
           </div>
-        </motion.div>
-
-        <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            y: [100, 0],
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
-        >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
-            <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
-
-            <p className="font-bold text-2xl group-hover:text-black text-white/80">
-              Communion Service
-            </p>
-            <p className="group-hover:text-black text-white/80 text-md">
-              * Marteru - 1st Sunday 10:00AM
-              <br />* Palakollu - 2nd Sunday 10:00AM
-            </p>
-            {/* <p
-        style={{
-          WebkitTextStroke: '1px gray',
-          WebkitTextFillColor: 'transparent',
-        }}
-        className="text-5xl font-bold self-end"
-      >
-        09
-      </p> */}
-          </div>
-        </motion.div>
-
-        <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            y: [100, 0],
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
-        >
-               <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
-            <FaPrayingHands className="text-white text-3xl group-hover:text-black" />
-
-            <p className="font-bold text-2xl group-hover:text-black text-white/80">
-              Mid-Week Service
-            </p>
-            <p className="group-hover:text-black text-white/80 text-md">
-              * Marteru - Wednesday 7:00PM
-              <br />* Palakollu - Tuesday 9:00AM
-            </p>
-            {/* <p
-        style={{
-          WebkitTextStroke: '1px gray',
-          WebkitTextFillColor: 'transparent',
-        }}
-        className="text-5xl font-bold self-end"
-      >
-        09
-      </p> */}
-          </div>
-        </motion.div>
-
-        <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            y: [100, 0],
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
-        >
-          <div className="service-card w-[300px] shadow-xl cursor-pointer snap-start shrink-0 py-8 px-6 bg-purple-700 flex flex-col items-start gap-3 transition-all duration-300 group hover:bg-[#e9b9ff] rounded-lg">
-            <Link href="/services">
-              <p
-                style={{
-                  WebkitTextStroke: "1px white",
-                  WebkitTextFillColor: "transparent",
-                }}
-                className="text-4xl font-bold "
-              >
-                View
-                <br />
-                More
-                <br />
-                services
-              </p>
-
-              <svg
-                class="rtl:rotate-180 w-10 h-5 ms-2 group-hover:text-black text-white/80"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </Link>
-          </div>
-        </motion.div>
-      </div>
+          <a
+    key="view-more"
+    href="/services"
+    className=" h-96 w-1/5 p-6 bg-[#1D24CA] text-white  rounded-lg shadow  flex flex-col justify-center items-center cursor-pointer" // Add cursor-pointer to indicate clickable
+  >
+    <h1 className="text-6xl text-md  font-bold mt-4 text-center">View More</h1>
+  </a>      </div>
 
       <PrayerRequest />    
       </div>

@@ -14,7 +14,7 @@ const Gallery = () => {
   const fetchGallery = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/gallery');
+      const response = await axios.get('http://localhost:9000/gallery');
       setData(response.data);
       // Initialize activeImages array with null for each set
       setActiveImages(response.data.map(() => null));
@@ -44,7 +44,7 @@ const Gallery = () => {
       <div className="flex justify-center items-center py-10  px-2">
         <div className="grid md:grid-cols-4 grid-cols-1 gap-10">
           {data.map((info, setIndex) => (
-            <div key={setIndex} className="grid gap-4 justify-center items-center align-middle w-full md:w-96 h-auto p-5  rounded-md bg-slate-100 border-purple-700 border-2">
+            <div key={setIndex} className="grid gap-4 justify-center items-center align-middle w-full md:w-96 h-auto p-5  rounded-md bg-[#1D24CA]">
               <div>
                 <img
                   className="h-auto w-full max-w-full rounded-lg object-cover object-center"
@@ -65,7 +65,7 @@ const Gallery = () => {
                 ))}
               </div>
               <Link  href={`/gallery/${info._id}`}
-  className="w-full bg-gradient-to-r from-purple-900 to-purple-500 rounded-md text-white font-bold uppercase py-2 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-900 transition duration-300 text-center" onPaste={()=>router.push('/gallery/viewmore')}
+  className="w-full bg-[#F9E8C9] text-[#201658] rounded-md  font-bold uppercase py-2  transition duration-300 text-center" onPaste={()=>router.push('/gallery/viewmore')}
 >
   View More
 </Link>            

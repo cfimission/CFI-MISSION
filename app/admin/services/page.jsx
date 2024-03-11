@@ -18,7 +18,7 @@ const Page = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/services'); 
+      const response = await axios.get('http://localhost:9000/services'); 
 
       setServices(response.data);
     } catch (error) {
@@ -30,9 +30,9 @@ const Page = () => {
     event.preventDefault();
     try {
       if (formData._id) {
-        await axios.put(`https://cfi-mission-backend.vercel.app/services/${formData._id}`, formData);
+        await axios.put(`http://localhost:9000/services/${formData._id}`, formData);
       } else {
-        await axios.post('https://cfi-mission-backend.vercel.app/services', formData);
+        await axios.post('http://localhost:9000/services', formData);
       }
       fetchServices();
       setFormData({ sno: '', title: '', description: '', logo: '', category: '' }); // Reset fields after submission
@@ -43,7 +43,7 @@ const Page = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://cfi-mission-backend.vercel.app/services/${id}`);
+      await axios.delete(`http://localhost:9000/services/${id}`);
       fetchServices();
     } catch (error) {
       console.error('Error deleting service:', error);
@@ -93,12 +93,17 @@ const Page = () => {
               </thead>
               {/* Table Body */}
               <tbody>
-                {services.map(service => (
+                {services .sort((a, b) => {
+    // First, compare by category
+    const categoryComparison = a.category.localeCompare(b.category);
+    // If categories are equal, compare by sno
+    return categoryComparison === 0 ? a.sno - b.sno : categoryComparison;
+  }).map(service => (
                   <tr key={service._id} className='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
                     <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.sno}</td>
                     <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.title}</td>
                     <td className='px-6 py-4'>{service.description}</td>
-                    <td className='px-6 py-4'>{service.logo}</td>
+                    <td className='px-6 py-4'>{service.logo?.slice(0, 15)}</td>
                     <td className='px-6 py-4'>{service.category}</td>
                     <td className='px-6 py-4'>
                       <button onClick={() => handleEdit(service)}>update</button>

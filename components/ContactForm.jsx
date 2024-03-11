@@ -31,7 +31,7 @@ const ContactForm = () => {
   
   
   return (
-    <div className=" mx-auto md:w-1/2 mt-10 p-6 bg-purple-700 text-white rounded-lg shadow-lg">
+    <div className=" mx-auto md:w-1/2 mt-10 p-6 bg-[#1D24CA] text-white rounded-lg shadow-lg">
       <form onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
         <div className="mb-4">
@@ -41,7 +41,7 @@ const ContactForm = () => {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black"
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-[#1D24CA]"
             required
           />
         </div>
@@ -52,7 +52,7 @@ const ContactForm = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black"
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-[#1D24CA]"
           />
         </div>
         <div className="mb-4">
@@ -62,7 +62,7 @@ const ContactForm = () => {
             id="contact"
             value={contact}
             onChange={(e) => setContact(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black"
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-[#1D24CA]"
             required
           />
         </div>
@@ -73,7 +73,7 @@ const ContactForm = () => {
             id="address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black"
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-[#1D24CA]"
             required
           />
         </div>
@@ -83,12 +83,12 @@ const ContactForm = () => {
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-black"
+            className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-[#1D24CA]"
             rows="5"
             required
           ></textarea>
         </div>
-        <button type="submit" className="w-full bg-black text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-black transition duration-300">Send</button>
+        <button type="submit" className="w-full bg-black text-white font-semibold py-2 px-4 rounded-lg hover:bg-white hover:text-[#1D24CA]transition duration-300">Send</button>
       </form>
     </div>
   );

@@ -21,7 +21,7 @@ const Contact = () => {
               <IoLogoWhatsapp size={50} color="green" />
             </div>
 
-            <h5 className="font-bold text-xl md:text-3xl text-purple-700  ">
+            <h5 className="font-bold text-xl md:text-3xl text-[#1D24CA]  ">
               99494 77535
             </h5>
 
@@ -37,10 +37,10 @@ const Contact = () => {
               </Link>
             </div>
 
-            <h5 class="mb-2 text-md font-normal tracking-tight text-gray-900 ">
+            <h5 class="mb-2 text-2xl font-normal tracking-tight text-[#1D24CA] ">
               email
             </h5>
-            <p class="font-bold text-purple-700 md:text-2xl">
+            <p class="font-bold text-[#1D24CA] md:text-2xl">
               cfimission@gmail.com
             </p>
           </div>
@@ -52,7 +52,7 @@ const Contact = () => {
               </h5>
             </div>
             <div className=" flex gap-x-2">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-700 ">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-[#1D24CA] ">
                 MARTERU
               </h5>
               <FaLocationDot size={25} color="red" className="animate-bounce" />
@@ -63,7 +63,7 @@ const Contact = () => {
               GODAVARI DIST - ANDHRA PRADESH PINCODE - 534122
             </h5>
             <div className=" flex gap-x-2">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-700 ">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-[#1D24CA] ">
                 PALAKOLLU
               </h5>
               <FaLocationDot size={25} color="red" className="animate-bounce" />
@@ -84,7 +84,7 @@ const Contact = () => {
 
         <div className="flex flex-col justify-cente md:items-center m-5 gap-5">
           <div className="md:w-1/2">
-            <h1 className=" font-bold text-2xl text-purple-700 uppercase pb-5">
+            <h1 className=" font-bold text-2xl text-[#1D24CA] uppercase pb-5">
               GOOGLE MAPS LINKS
             </h1>
             <h5 className="font-bold text-lg text-black   ">MARTERU</h5>

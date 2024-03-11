@@ -17,7 +17,7 @@ const Login = () => {
   
       try {
         setLoading(true)
-        const response = await axios.post('https://cfi-mission-backend.vercel.app/login', {
+        const response = await axios.post('http://localhost:9000/login', {
           username,  // Use the correct variable name
           password,  // Use the correct variable name
         });
@@ -72,7 +72,7 @@ const Login = () => {
             <div role="status">
               <svg
                 aria-hidden="true"
-                class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ const Login = () => {
                   fill="currentFill"
                 />
               </svg>
-              <span class="sr-only">Loading...</span>
+              <span className="sr-only">Loading...</span>
             </div>
           ) : (
             <h1>Login</h1>

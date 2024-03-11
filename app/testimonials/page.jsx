@@ -12,7 +12,7 @@ const Testimonials = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "https://cfi-mission-backend.vercel.app/testimonials"
+        "http://localhost:9000/testimonials"
       );
       setTestimonials(response.data);
       console.log(response.data);
@@ -41,7 +41,7 @@ const Testimonials = () => {
                 transition: { duration: 1, ease: "easeInOut" },
               }}
             >
-              <h5 className=" text-4xl font-bold tracking-wide text-purple-700  uppercase text-center my-10 ">
+              <h5 className=" text-4xl font-bold tracking-wide text-[#1D24CA] uppercase text-center my-10 ">
                 {items.title}
               </h5>
             </motion.div>
@@ -55,13 +55,13 @@ const Testimonials = () => {
             >
              <div className="flex flex-wrap justify-center gap-5">
   {items.videoUrls.map((videoId, index) => (
-    <div key={index} class="aspect-w-16 aspect-h-9">
+    <div key={index} className="aspect-w-16 aspect-h-9">
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
         title={`YouTube Video ${index + 1}`}
         frameBorder="0"
         allowFullScreen
-        class="w-full h-full lg:w-[460px] lg:h-[215px]"
+        className="w-full h-full lg:w-[460px] lg:h-[215px]"
       ></iframe>
     </div>
   ))}

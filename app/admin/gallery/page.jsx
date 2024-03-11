@@ -17,7 +17,7 @@ const GalleryPage = () => {
   const fetchGalleryEntries = async () => {
     try {
       setLoading(true)
-      const response = await axios.get('https://cfi-mission-backend.vercel.app/gallery'); 
+      const response = await axios.get('http://localhost:9000/gallery'); 
       setGalleryEntries(response.data);
       setLoading(false)
 
@@ -52,7 +52,7 @@ const GalleryPage = () => {
   const handleCreateEntry = async () => {
     try {
       setLoading(true)
-      await axios.post('https://cfi-mission-backend.vercel.app/gallery', newEntry);
+      await axios.post('http://localhost:9000/gallery', newEntry);
       setNewEntry({
         title: '',
         description: '',
@@ -70,7 +70,7 @@ const GalleryPage = () => {
 
   const handelDelete = async ( id )=>{
     try {
-      await axios.delete(`https://cfi-mission-backend.vercel.app/gallery/${id}`)
+      await axios.delete(`http://localhost:9000/gallery/${id}`)
       fetchGalleryEntries();
     } catch (error) {
       console.error('Error creating gallery entry:', error);
@@ -88,7 +88,7 @@ const GalleryPage = () => {
   const handleUpdateEntry = async () => {
     try {
       setLoading(true);
-      await axios.put(`https://cfi-mission-backend.vercel.app/gallery/${selectedEntry._id}`, newEntry);
+      await axios.put(`http://localhost:9000/gallery/${selectedEntry._id}`, newEntry);
       setSelectedEntry(null);
       setNewEntry({
         title: "",
@@ -113,23 +113,23 @@ const GalleryPage = () => {
     <div>
       
 
-<div class="relative overflow-x-auto">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<div className="relative overflow-x-auto">
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                 title
                                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                 description
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                 ImageUrls
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                update
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                delete
                 </th>
                 
@@ -138,20 +138,20 @@ const GalleryPage = () => {
         </thead>
         <tbody>
           { galleryEntries.map((data)=>(
-    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={data._id}>
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={data._id}>
+    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
       {data.title}
     </th>
-    <td class="px-6 py-4">
+    <td className="px-6 py-4">
         {data.description.slice(0, 15)}
     </td>
-    <td class="px-6 py-4">
+    <td className="px-6 py-4">
         {data.ImageUrls[0].slice(0,20)}
     </td>
-    <td class="px-6 py-4">
+    <td className="px-6 py-4">
         <button onClick={() => handleUpdate(data._id)}>update</button>
     </td>
-    <td class="px-6 py-4">
+    <td className="px-6 py-4">
     <button onClick={() => handelDelete(data._id)}>delete</button>
 
     </td>
@@ -209,7 +209,7 @@ const GalleryPage = () => {
     <div role="status">
       <svg
         aria-hidden="true"
-        class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+        className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +223,7 @@ const GalleryPage = () => {
           fill="currentFill"
         />
       </svg>
-      <span class="sr-only">Loading...</span>
+      <span className="sr-only">Loading...</span>
     </div>
   ) : (
     <h1>{selectedEntry ? "Update" : "Create New"}</h1>

@@ -12,7 +12,7 @@ const Cfimission = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "https://cfi-mission-backend.vercel.app/about?category=Cfi_Mission"
+        "http://localhost:9000/about?category=Cfi_Mission"
       );
       setAboutData(response.data);
       setLoading(false);
@@ -32,12 +32,12 @@ const Cfimission = () => {
       <Navbar />
 
       <div className="flex justify-center m-5  ">
-        <Link href="/about/sureshkumar" className="bg-purple-400 rounded-l-lg">
+        <Link href="/about/sureshkumar" className="bg-[#98ABEE] rounded-l-lg">
           <h1 className="text-lg md:text-xl p-2 font-bold flex justify-center items-center text-white h-full  ">About Pastor </h1>
         </Link>
 
-        <Link href="/about/cfimission" className=" bg-purple-400 rounded-r-lg">
-          <h1 className=" text-lg md:text-xl p-2 font-bold bg-purple-700 rounded-lg m-1 text-white text-center ">About Church </h1>
+        <Link href="/about/cfimission" className=" bg-[#98ABEE] rounded-r-lg">
+          <h1 className=" text-lg md:text-xl p-2 font-bold bg-[#1D24CA] rounded-lg m-1 text-white text-center ">About Church </h1>
         </Link>
       </div>
 
@@ -55,26 +55,26 @@ const Cfimission = () => {
               <div className="flex gap-x-3 ">
                 <div className="w-16 text-end">
                   <div className="w-20  text-center">
-                    <span className="text-lg font-bold text-purple-700  break-words">
+                    <span className="text-lg font-bold text-[#1D24CA] break-words">
                       {item.dayabout}
                     </span>
                   </div>
-                  <span className="text-sm text-black ">
+                  <span className="text-sm text-[#1D24CA]">
                     {item.day}
                   </span>
                 </div>
 
-                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-purple-500 ">
+                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-[#98ABEE] ">
                   <div className="relative z-10 w-7 h-7 flex justify-center items-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-700 "></div>
+                    <div className="w-2 h-2 rounded-full bg-[#1D24CA] "></div>
                   </div>
                 </div>
 
                 <div className="grow pt-0.5 pb-8">
-                  <h3 className="flex gap-x-1.5 font-semibold text-purple-700  text-2xl">
+                  <h3 className="flex gap-x-1.5 font-semibold text-[#1D24CA] text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm text-black ">
+                  <p className="mt-1 text-sm text-[#1D24CA]">
                     {item.description}
                   </p>
 

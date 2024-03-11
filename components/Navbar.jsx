@@ -17,20 +17,19 @@ const Navbar = () => {
     };
   
     return (
-        <nav className=" bg-purple-700   w-full z-20 top-0 start-0 border-b border-purple-500">
+        <nav className=" bg-[#1D24CA]   w-full z-20 top-0 start-0  ">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">CFI Mission</span>
                 </Link>
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button
+                {/* <button
         type="button"
         onClick={handleToggleForm}
-        className="text-black bg-white hover:bg-purple-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center "
-      >
+bg      >
         Donate us
-      </button>
+      </button> */}
 
       {isContactFormOpen && <ContactForm onClose={handleToggleForm} />}
     
@@ -66,11 +65,11 @@ const Navbar = () => {
                     }`}
                     id="navbar-sticky"
                 >
-                    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-purple-700 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  ">
+                    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-[#1D24CA] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  ">
                         <li>
                             <Link
                                 href="/"
-                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded    hover:text-[#1D24CA]md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Home
                             </Link>
@@ -78,7 +77,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/about/sureshkumar"
-                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded    hover:text-[#1D24CA]md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 About
                             </Link>
@@ -86,7 +85,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/testimonials"
-                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded    hover:text-[#1D24CA]md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Testimonials
                             </Link>
@@ -94,7 +93,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/gallery"
-                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded    hover:text-[#1D24CA]md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Gallery
                             </Link>
@@ -102,7 +101,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/services"
-                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
+                                className="block py-2 px-3 text-white rounded    hover:text-[#1D24CA]md:hover:bg-transparent md:hover:text-purple-900 md:p-0 "
                             >
                                 Services
                             </Link>
@@ -110,7 +109,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href="/contact"
-                                className="block py-2 px-3 text-white rounded hover:bg-white hover:text-purple-700 md:hover:bg-transparent md:hover:text-purple-900 md:p-0"
+                                className="block py-2 px-3 text-white rounded    hover:text-[#1D24CA]md:hover:bg-transparent md:hover:text-purple-900 md:p-0"
                             >
                                 Contact
                             </Link>

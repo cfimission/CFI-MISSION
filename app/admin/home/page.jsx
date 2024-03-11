@@ -1,85 +1,106 @@
 'use client'
 import Navbar from "@/components/Admin/Navbar";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 const Home = () => {
-    const [homeEntries, setHomeEntries] = useState([]);
-    const [loading,setLoading] = useState(false)
-    const [newEntry, setNewEntry] = useState({
-        id:'',
+  const [homeEntries, setHomeEntries] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [newEntry, setNewEntry] = useState({
+    id: '',
+    ImageUrls: [],
+    verces: [] // Add verces field to the newEntry state
+  });
+
+  const fetchHomeEntries = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get('http://localhost:9000/home/admin');
+      console.log(response);
+      setHomeEntries(response.data);
+      setNewEntry({ ImageUrls: response.data[0]?.ImageUrls, id: response.data[0]?._id, verces: response.data[0]?.verces }); // Set to the first entry's ImageUrls and verces, or an empty array if no entries
+      setLoading(false);
+      console.log(response);
+    } catch (error) {
+      setLoading(false);
+      console.error('Error fetching home entries:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchHomeEntries();
+  }, []);
+
+  const handleImageUrlsChange = (e) => {
+    const { value } = e.target;
+    setNewEntry((prevEntry) => ({
+      ...prevEntry,
+      ImageUrls: value.split('\n'),
+    }));
+  };
+
+  const handleVercesChange = (e) => {
+    const { value } = e.target;
+    setNewEntry((prevEntry) => ({
+      ...prevEntry,
+      verces: value.split('\n'),
+    }));
+  };
+
+  const handleUpdateEntry = async () => {
+    try {
+      setLoading(true);
+      await axios.put(`http://localhost:9000/home/${newEntry.id}`, newEntry);
+      setNewEntry({
         ImageUrls: [],
+        verces: [] // Reset verces field after update
       });
-      const fetchHomeEntries = async () => {
-        try {
-          setLoading(true)
-          const response = await axios.get('https://cfi-mission-backend.vercel.app/home/admin'); 
-          console.log(response)
-          setHomeEntries(response.data);
-          setNewEntry({ ImageUrls: response.data[0]?.ImageUrls ,id:response.data[0]?._id}); // Set to the first entry's ImageUrls, or an empty array if no entries
-          setLoading(false)
-          console.log(response)
-        } catch (error) {
-          setLoading(false)
-          console.error('Error fetching home entries:', error);
-        }
-      };
+      setLoading(false);
 
+      fetchHomeEntries();
+    } catch (error) {
+      setLoading(false);
 
-    
-      useEffect(() => {
-        fetchHomeEntries();
-      }, []);
+      console.error("Error updating home entry:", error);
+    }
+  };
 
-      const handleImageUrlsChange = (e) => {
-      const {  value } = e.target;
-        setNewEntry((prevEntry) => ({
-          ...prevEntry,
-          ImageUrls: value.split('\n'),
-        }));
-      };
-
-      const handleUpdateEntry = async () => {
-        try {
-          setLoading(true);
-          await axios.put(`https://cfi-mission-backend.vercel.app/home/${newEntry.id}`, newEntry);
-          setNewEntry({
-            ImageUrls: [],
-          });
-          setLoading(false);
-      
-          fetchHomeEntries();
-        } catch (error) {
-          setLoading(false);
-      
-          console.error("Error updating home entry:", error);
-        }
-      };
   return (
     <div>
       <Navbar />
       <div className="flex justify-center flex-col items-center h-96">
 
-      <label htmlFor="imageUrls">Recent Image URLs (separated by new line):</label>
-      <textarea
-        id="imageUrls"
-        name="imageUrls"
-        value={(newEntry.ImageUrls ?? []).join("\n")}
-        onChange={handleImageUrlsChange}
-        className="w-1/2 h-52  block py-2.5 px-0 text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
-      ></textarea>
+        <label htmlFor="imageUrls">Recent Image URLs (separated by new line):</label>
+        <textarea
+          id="imageUrls"
+          name="imageUrls"
+          value={(newEntry.ImageUrls ?? []).join("\n")}
+          onChange={handleImageUrlsChange}
+          className="w-1/2 h-52  block py-2.5 px-0 text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+        ></textarea>
+
+        <label htmlFor="verces">Recent Verces (separated by new line):</label>
+        <textarea
+          id="verces"
+          name="verces"
+          value={(newEntry.verces ?? []).join("\n")}
+          onChange={handleVercesChange}
+          className="w-1/2 h-52  block py-2.5 px-0 text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+        ></textarea>
+
       </div>
 
       <div className="flex justify-center">
         <button
           type="button"
-          onClick={handleUpdateEntry }
+          onClick={handleUpdateEntry}
           className="w-32 mt-10  text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >
           {loading ? (
             <div role="status">
               <svg
                 aria-hidden="true"
-                class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +114,7 @@ const Home = () => {
                   fill="currentFill"
                 />
               </svg>
-              <span class="sr-only">Loading...</span>
+              <span className="sr-only">Loading...</span>
             </div>
           ) : (
             <h1>update</h1>
