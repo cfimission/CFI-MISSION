@@ -17,7 +17,7 @@ const GalleryPage = () => {
   const fetchGalleryEntries = async () => {
     try {
       setLoading(true)
-      const response = await axios.get('http://localhost:9000/gallery'); 
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/gallery'); 
       setGalleryEntries(response.data);
       setLoading(false)
 
@@ -52,7 +52,7 @@ const GalleryPage = () => {
   const handleCreateEntry = async () => {
     try {
       setLoading(true)
-      await axios.post('http://localhost:9000/gallery', newEntry);
+      await axios.post('https://cfi-mission-backend.vercel.app/gallery', newEntry);
       setNewEntry({
         title: '',
         description: '',
@@ -70,7 +70,7 @@ const GalleryPage = () => {
 
   const handelDelete = async ( id )=>{
     try {
-      await axios.delete(`http://localhost:9000/gallery/${id}`)
+      await axios.delete(`https://cfi-mission-backend.vercel.app/gallery/${id}`)
       fetchGalleryEntries();
     } catch (error) {
       console.error('Error creating gallery entry:', error);
@@ -88,7 +88,7 @@ const GalleryPage = () => {
   const handleUpdateEntry = async () => {
     try {
       setLoading(true);
-      await axios.put(`http://localhost:9000/gallery/${selectedEntry._id}`, newEntry);
+      await axios.put(`https://cfi-mission-backend.vercel.app/gallery/${selectedEntry._id}`, newEntry);
       setSelectedEntry(null);
       setNewEntry({
         title: "",

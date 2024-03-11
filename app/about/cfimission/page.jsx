@@ -12,7 +12,7 @@ const Cfimission = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:9000/about?category=Cfi_Mission"
+        "https://cfi-mission-backend.vercel.app/about?category=Cfi_Mission"
       );
       setAboutData(response.data);
       setLoading(false);

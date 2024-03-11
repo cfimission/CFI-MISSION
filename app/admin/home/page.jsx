@@ -15,7 +15,7 @@ const Home = () => {
   const fetchHomeEntries = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:9000/home/admin');
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/home/admin');
       console.log(response);
       setHomeEntries(response.data);
       setNewEntry({ ImageUrls: response.data[0]?.ImageUrls, id: response.data[0]?._id, verces: response.data[0]?.verces }); // Set to the first entry's ImageUrls and verces, or an empty array if no entries
@@ -50,7 +50,7 @@ const Home = () => {
   const handleUpdateEntry = async () => {
     try {
       setLoading(true);
-      await axios.put(`http://localhost:9000/home/${newEntry.id}`, newEntry);
+      await axios.put(`https://cfi-mission-backend.vercel.app/home/${newEntry.id}`, newEntry);
       setNewEntry({
         ImageUrls: [],
         verces: [] // Reset verces field after update

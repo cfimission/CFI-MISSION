@@ -18,7 +18,7 @@ const Page = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get('http://localhost:9000/services'); 
+      const response = await axios.get('https://cfi-mission-backend.vercel.app/services'); 
 
       setServices(response.data);
     } catch (error) {
@@ -30,9 +30,9 @@ const Page = () => {
     event.preventDefault();
     try {
       if (formData._id) {
-        await axios.put(`http://localhost:9000/services/${formData._id}`, formData);
+        await axios.put(`https://cfi-mission-backend.vercel.app/services/${formData._id}`, formData);
       } else {
-        await axios.post('http://localhost:9000/services', formData);
+        await axios.post('https://cfi-mission-backend.vercel.app/services', formData);
       }
       fetchServices();
       setFormData({ sno: '', title: '', description: '', logo: '', category: '' }); // Reset fields after submission
@@ -43,7 +43,7 @@ const Page = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:9000/services/${id}`);
+      await axios.delete(`https://cfi-mission-backend.vercel.app/services/${id}`);
       fetchServices();
     } catch (error) {
       console.error('Error deleting service:', error);

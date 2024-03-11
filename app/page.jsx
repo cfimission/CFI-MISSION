@@ -21,7 +21,7 @@ export default function Home() {
   const fetchServices = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:9000/services");
+      const response = await axios.get("https://cfi-mission-backend.vercel.app/services");
       
       const fetchedServices = [];
   
@@ -52,7 +52,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:9000/home");
+      const response = await axios.get("https://cfi-mission-backend.vercel.app/home");
       setRecentImage(response.data.recentImages);
       setBannerImage(response.data.bannerImage);
       setVerses(response.data.verces); // Set the verces data
@@ -92,29 +92,33 @@ useEffect(()=>{
       >
         {/* versesection */}
         <div id="section" className="flex justify-center p-5">
-            <div className="rounded-lg bg-[#1D24CA] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
-              <motion.div
-                whileInView={{
-                  x: [40, 0],
-                  transition: { duration: 1, ease: "easeIn" },
-                }}
-              >
-                <h5 className="mb-2 text-4xl font-bold tracking-tight text-white">
-                {verses.split(':')[0]}
-                </h5>
-              </motion.div>
-              <motion.div
-                whileInView={{
-                  x: [40, 0],
-                  transition: { duration: 1, ease: "easeIn" },
-                }}
-              >
-                <p className="font-normal text-white text-md text-xl">
-                {verses.split(':')[1]}
-                </p>
-              </motion.div>
-            </div>
-          </div>
+  <div className="rounded-lg bg-[#1D24CA] p-4 my-10 flex flex-col items-center justify-center shadow-inner-smooth w-2xl">
+    {verses && ( // Conditionally render only when verses is defined
+      <>
+        <motion.div
+          whileInView={{
+            x: [40, 0],
+            transition: { duration: 1, ease: "easeIn" },
+          }}
+        >
+          <h5 className="mb-2 text-4xl font-bold tracking-tight text-white">
+            {verses.split(':')[0]}
+          </h5>
+        </motion.div>
+        <motion.div
+          whileInView={{
+            x: [40, 0],
+            transition: { duration: 1, ease: "easeIn" },
+          }}
+        >
+          <p className="font-normal text-white text-md text-xl">
+            {verses.split(':')[1]}
+          </p>
+        </motion.div>
+      </>
+    )}
+  </div>
+</div>
         </motion.div>
       </div>
 

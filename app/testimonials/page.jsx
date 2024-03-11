@@ -12,7 +12,7 @@ const Testimonials = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:9000/testimonials"
+        "https://cfi-mission-backend.vercel.app/testimonials"
       );
       setTestimonials(response.data);
       console.log(response.data);

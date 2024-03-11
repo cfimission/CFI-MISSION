@@ -16,7 +16,7 @@ const Page = ({ params }) => {
   const fetchGallery = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:9000/gallery/${params.id}`);
+      const response = await axios.get(`https://cfi-mission-backend.vercel.app/gallery/${params.id}`);
       setData(response.data);
       setLoading(false);
     } catch (error) {

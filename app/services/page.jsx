@@ -12,7 +12,7 @@ const Services = () => {
   const fetchServices = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:9000/services"
+        "https://cfi-mission-backend.vercel.app/services"
       );
       setServices(response.data);
       setLoading(false);
