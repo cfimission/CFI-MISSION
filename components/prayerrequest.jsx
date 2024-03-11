@@ -7,7 +7,7 @@ const PrayerRequest = () => {
         <Link
           type="button"
           href='/contact#from'
-          className="text-[#1D24CA]font-bold bg-gradient-to-r from-[#98ABEE]  to-[#1D24CA]   text-lg rounded-lg  px-20  py-5 text-center me-2 mb-2 animate-bounce"
+          className="text-[#ffffff] font-bold bg-gradient-to-r from-[#7b95f5]  to-[#1D24CA]   text-lg rounded-lg  px-20  py-5 text-center me-2 mb-2 animate-bounce"
         >
           Send Prayer Request
         </Link>

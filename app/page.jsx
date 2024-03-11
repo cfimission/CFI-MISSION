@@ -286,7 +286,7 @@ God Bless You
           <a
     key="view-more"
     href="/services"
-    className=" h-96 w-1/5 p-6 bg-[#1D24CA] text-white  rounded-lg shadow  flex flex-col justify-center items-center cursor-pointer" // Add cursor-pointer to indicate clickable
+    className=" h-96 md:w-1/5 p-6 mt-5 bg-[#1D24CA] text-white  rounded-lg shadow  flex flex-col justify-center items-center cursor-pointer" // Add cursor-pointer to indicate clickable
   >
     <h1 className="text-6xl text-md  font-bold mt-4 text-center">View More</h1>
   </a>      </div>

@@ -78,13 +78,13 @@ const Cfimission = () => {
                     {item.description}
                   </p>
 
-                  <div className="flex gap-2 mt-2 flex-wrap">
+                  <div className="flex gap-2 mt-2 ">
                     {item.ImageUrls.map((image, index) => (
                       <img
                         key={index}
                         src={image}
                         alt={`Image ${index}`}
-                        className=" w-28 md:w-48 h-auto "
+                        className=" w-28 h-auto "
                       />
                     ))}
                   </div>
