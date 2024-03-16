@@ -45,7 +45,7 @@ const RecentActivitiesSlider = ({ img }) => {
     <div>
       <h1 className="text-center text-3xl font-bold pb-5">Recent Activities</h1>
 
-      <div className="flex items-center flex-col justify-center md:h-[100vh] h-[30vh] relative overflow-hidden mb-5 ">
+      <div className="flex items-center flex-col justify-center md:h-[60vh] h-[30vh] relative overflow-hidden mb-5 ">
         {img.map((image, index) => (
           <motion.img
             key={index}
