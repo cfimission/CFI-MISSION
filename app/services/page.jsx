@@ -53,8 +53,8 @@ const Services = () => {
                   <div className="flex justify-center flex-col items-center ">
 
                   <img src={service.logo} alt="" className="h-20 w-20 rounded-full" />
-                  <h1 className="md:text-xl text-md  font-bold mt-4">{service.title}</h1> 
-                  <p className="text-sm text-left pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quibusdam iure placeat sequi, inventore, repellendus accusamus reprehenderit possimus soluta accusantium mollitia magnam facere tempora, consectetur temporibus. Amet deserunt recusandae itaque.</p>
+                  <h1 className="md:text-xl text-md  font-bold mt-4">{service.title.split(';')[0]}</h1> 
+                  <p className="text-sm text-left pt-2">{service.title.split(';')[1]}</p>
                   </div>
 
                   <div className="table-container max-h-52 overflow-y-auto w-full">

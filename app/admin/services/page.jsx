@@ -101,7 +101,7 @@ const Page = () => {
   }).map(service => (
                   <tr key={service._id} className='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
                     <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.sno}</td>
-                    <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.title}</td>
+                    <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>{service.title.split(';')[0]}</td>
                     <td className='px-6 py-4'>{service.description}</td>
                     <td className='px-6 py-4'>{service.logo?.slice(0, 15)}</td>
                     <td className='px-6 py-4'>{service.category}</td>
