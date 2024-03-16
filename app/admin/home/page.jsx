@@ -53,7 +53,7 @@ const Home = () => {
       await axios.put(`https://cfi-mission-backend.vercel.app/home/${newEntry.id}`, newEntry);
       setNewEntry({
         ImageUrls: [],
-        verces: [] // Reset verces field after update
+        verces: [] 
       });
       setLoading(false);
 
