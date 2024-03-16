@@ -45,13 +45,13 @@ const RecentActivitiesSlider = ({ img }) => {
     <div>
       <h1 className="text-center text-3xl font-bold pb-5">Recent Activities</h1>
 
-      <div className="flex items-center flex-col justify-center md:h-[50vh] h-[30vh] relative overflow-hidden mb-5">
+      <div className="flex items-center flex-col justify-center md:h-[100vh] h-[30vh] relative overflow-hidden mb-5 ">
         {img.map((image, index) => (
           <motion.img
             key={index}
             src={image}
             alt={image}
-            className="rounded-[12px] absolute"
+            className="rounded-[12px] absolute border-2 border-blue-700"
             initial="center"
             animate={positions[positionIndexes[index]]}
             variants={imageVariants}
@@ -59,7 +59,6 @@ const RecentActivitiesSlider = ({ img }) => {
             style={{
               width: "80%", // Adjust as needed for responsiveness
               maxWidth: "700px", // Set a maximum width if needed
-              height: "auto", // Maintain aspect ratio
               cursor: "pointer",
               opacity:
                 positions[positionIndexes[index]] === "center"
