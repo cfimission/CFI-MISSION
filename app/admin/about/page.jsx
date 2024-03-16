@@ -179,14 +179,14 @@ const About = () => {
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                       >
-                        {data.title || "Title Not Available"}{" "}
+                        {data.title.slice(0, 15) || "Title Not Available"}{" "}
                         {/* Ensure that data.title is not undefined */}
                       </th>
                       <td className="px-6 py-4">
                         {data.description?.slice(0, 15)}
                       </td>
                       <td className="px-6 py-4">
-                        {data.ImageUrls[0]}
+                        {data.ImageUrls[0].slice(0, 15)}
                       </td>
                       <td className="px-6 py-4">{data.dayabout}</td>
                       <td className="px-6 py-4">{data.day}</td>

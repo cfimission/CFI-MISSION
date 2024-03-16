@@ -149,8 +149,9 @@ useEffect(()=>{
                 src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1704534678/swykch8cwcfatoljsptf.jpg"
                 alt=""
               />
-              <div className=" md:w-1/2 flex flex-col justify-between items-start gap-5">
-              <a href="/about/sureshkumar">
+              <div className=" md:w-1/2 flex flex-col justify-between items-start gap-5  h-full">
+              <div className="flex flex-col items-start gap-4">
+                <a href="/about/sureshkumar">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
                 We Pray For You
               </h5>
@@ -162,6 +163,8 @@ useEffect(()=>{
                   situations, or perhaps need a message of encouragement or
                   hope. May we offer a prayer for you and your concerns?
                 </p>
+                </div>
+
                 <a
                   href="/about/sureshkumar"
                   className=" flex items-center px-3 py-3  text-md font-bold justify-center uppercase text-[#000000] bg-white rounded-lg   w-full "
@@ -202,14 +205,15 @@ useEffect(()=>{
 
 
             
-                <div className="flex gap-5 flex-col md:flex-row justify-center items-center">
+          <div className="flex gap-5 flex-col md:flex-row justify-center items-center  h-full">
               <img
                 className="object-cover h-full md:w-1/2  rounded-lg  "
                 src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1707910827/2_x2iri8.jpg"
                 alt=""
               />
-              <div className=" md:w-1/2 flex flex-col justify-end items-start gap-5">
-              <a href="/testimonials">
+              <div className=" md:w-1/2 flex flex-col justify-between items-start gap-5  h-full">
+                <div className="flex flex-col items-start gap-4">
+                <a href="/testimonials">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
 God Bless You
               </h5>
@@ -219,6 +223,8 @@ God Bless You
                   the world. - John 1:9 You are the light of the world. Matthew
                   5:14
                 </p>
+                </div>
+
                 <a
                   href="/testimonials"
                   className=" flex items-center px-3 py-3  text-md font-bold justify-center uppercase text-[#000000] bg-white rounded-lg   w-full "
@@ -293,7 +299,7 @@ God Bless You
   {services.length === 3 && (
     <div className="max-w-sm p-6  text-white rounded-lg  flex flex-col justify-center items-center">
       {/* Custom button */}
-      <button className="bg-[#1D24CA] text-white px-4 py-4  rounded-full">
+      <a href="/services" className="bg-[#1D24CA] text-white px-4 py-4  rounded-full">
       <svg
                     className="rtl:rotate-180 w-10 h-10  rtl:animate-bounce"
                     aria-hidden="true"
@@ -309,7 +315,7 @@ God Bless You
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-      </button>
+      </a>
       <h1 className="text-[#1D24CA] font-bold text-xl">View More</h1>
 
     </div>

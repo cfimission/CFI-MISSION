@@ -84,7 +84,7 @@ const SureshKumar = () => {
                       <img
                         key={index}
                         src={image}
-                        alt={`Image ${index}`}
+                        alt=""
                         className=" w-16 md:w-36 h-auto "
                       />
                     ))}
