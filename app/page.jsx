@@ -267,7 +267,8 @@ God Bless You
       key={index}
       className="max-w-md  md:w-max w-full p-4 bg-[#1D24CA] text-white rounded-lg shadow flex flex-col justify-center items-center "
     >
-      <img src={service.logo} alt="" className="h-20 w-20" />
+                  <img src={service.logo} alt=""   className="h-20 w-20 rounded-full shadow-md shadow-[#191b50]"
+ />
       <h1 className="md:text-xl text-md font-bold mt-4">{service.title.split(';')[0]}</h1>
       <p className="text-sm text-left pt-2">{service.title.split(';')[1]}</p>
       <div className="table-container max-h-52 overflow-y-auto">
