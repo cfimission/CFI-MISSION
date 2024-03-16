@@ -35,7 +35,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
         <div className="mb-4">
-          <label htmlFor="name" className="block text-white font-semibold mb-2">Name</label>
+          <label htmlFor="name" className="block text-white font-semibold mb-2">Name*</label>
           <input
             type="text"
             id="name"
@@ -56,7 +56,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="contact" className="block text-white font-semibold mb-2">Contact</label>
+          <label htmlFor="contact" className="block text-white font-semibold mb-2">Contact*</label>
           <input
             type="text"
             id="contact"
@@ -74,7 +74,6 @@ const ContactForm = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-[#1D24CA]"
-            required
           />
         </div>
         <div className="mb-4">
