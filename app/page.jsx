@@ -102,7 +102,7 @@ useEffect(()=>{
           }}
         >
           <h5 className="mb-2 text-4xl font-bold tracking-tight text-white">
-            {verses.split(':')[0]}
+            {verses.split(';')[0]}
           </h5>
         </motion.div>
         <motion.div
@@ -112,7 +112,7 @@ useEffect(()=>{
           }}
         >
           <p className="font-normal text-white text-md text-xl">
-            {verses.split(':')[1]}
+            {verses.split(';')[1]}
           </p>
         </motion.div>
       </>

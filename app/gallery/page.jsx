@@ -44,31 +44,37 @@ const Gallery = () => {
       <div className="flex justify-center items-center py-10  px-2">
         <div className="grid md:grid-cols-4 grid-cols-1 gap-10">
           {data.map((info, setIndex) => (
-            <div key={setIndex} className="grid gap-4 justify-center items-center align-middle w-full md:w-96 h-auto p-5  rounded-md bg-[#1D24CA]">
+            <div key={setIndex} className="grid gap-4 justify-between  w-full  h-auto p-5  md:mx-10 rounded-md bg-[#1D24CA]">
               <div>
+                <h1 className="text-center font-bold text-white text-3xl  pb-2">{info.title }</h1>
                 <img
-                  className="h-auto w-full max-w-full rounded-lg object-cover object-center"
+                  className="h-96 w-full max-w-full rounded-lg object-cover object-center"
                   src={activeImages[setIndex] || info.ImageUrls[0]}
                   alt=""
                 />
               </div>
-              <div className="grid grid-cols-5 gap-4">
-                {info.ImageUrls.slice(0, 5).map((imagelink, index) => (
+              <div className="grid grid-cols-3 gap-x-4 ">
+                {info.ImageUrls.slice(0, 3).map((imagelink, index) => (
                   <div key={index}>
                     <img
                       onClick={() => openModal(imagelink, setIndex)}
                       src={imagelink}
-                      className="h-20 max-w-full cursor-pointer rounded-lg object-cover object-center"
+                      className="h-20 w-full  cursor-pointer rounded-lg object-cover object-center"
                       alt="gallery-image"
                     />
                   </div>
                 ))}
               </div>
+              
+              <div className="flex justify-end items-end">
+
               <Link  href={`/gallery/${info._id}`}
-  className="w-full bg-[#F9E8C9] text-[#201658] rounded-md  font-bold uppercase py-2  transition duration-300 text-center" onPaste={()=>router.push('/gallery/viewmore')}
+  className="w-full h-10 bg-[#F9E8C9] text-[#201658] rounded-md  font-bold uppercase py-2  transition duration-300 text-center " onPaste={()=>router.push('/gallery/viewmore')}
 >
-  View More
-</Link>            
+See All
+</Link>   
+</div>
+
 </div>
           ))}
         </div>
