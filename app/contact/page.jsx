@@ -25,7 +25,7 @@ const Contact = () => {
     </div>
   </div>
 
-  <div className="flex items-center bg-gradient-to-r from-green-500 to-green-700 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 w-70 h-32">
+  <div className="flex items-center bg-gradient-to-r from-green-500 to-green-700 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 w-80 h-32">
     <div className="bg-white rounded-full p-4">
       <IoLogoWhatsapp size={30} color="#25D366" />
     </div>
