@@ -291,11 +291,27 @@ God Bless You
   ))}
   {/* Render custom button after the third card */}
   {services.length === 3 && (
-    <div className="max-w-sm p-6 bg-[#1D24CA] text-white rounded-lg shadow flex flex-col justify-center items-center">
+    <div className="max-w-sm p-6  text-white rounded-lg  flex flex-col justify-center items-center">
       {/* Custom button */}
-      <button className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md">
-        Custom Button
+      <button className="bg-[#1D24CA] text-white px-4 py-4  rounded-full">
+      <svg
+                    className="rtl:rotate-180 w-10 h-10  rtl:animate-bounce"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
       </button>
+      <h1 className="text-[#1D24CA] font-bold text-xl">View More</h1>
+
     </div>
   )}
 </div>
