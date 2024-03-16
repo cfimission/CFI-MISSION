@@ -42,13 +42,13 @@ const Gallery = () => {
     <div>
       <Navbar />
       <div className="flex justify-center items-center py-10  px-2">
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-10">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-10 w-full">
           {data.map((info, setIndex) => (
-            <div key={setIndex} className="grid gap-4 justify-between  w-full  h-auto p-5  md:mx-10 rounded-md bg-[#1D24CA]">
+            <div key={setIndex} className="grid gap-4 justify-between  h-max w-96  p-5  md:mx-10 rounded-md bg-[#1D24CA]">
               <div>
                 <h1 className="text-center font-bold text-white text-3xl  pb-2">{info.title }</h1>
                 <img
-                  className="h-96 w-full max-w-full rounded-lg object-cover object-center"
+                  className=" h-96 w-full rounded-lg object-cover object-center"
                   src={activeImages[setIndex] || info.ImageUrls[0]}
                   alt=""
                 />

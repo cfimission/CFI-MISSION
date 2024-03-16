@@ -81,7 +81,7 @@ useEffect(()=>{
         <img
           src={bannerImage}
           alt="Hero Image"
-          className="object-cover object-center  md:h-3/4 w-full h-auto "
+          className="  object-center  md:h-3/4 w-full h-auto "
         />
       <motion.div
         whileInView={{
