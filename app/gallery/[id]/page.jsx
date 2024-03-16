@@ -76,7 +76,7 @@ const Page = ({ params }) => {
           <motion.img
             src={data.ImageUrls[selectedImageIndex]}
             alt={`Image ${selectedImageIndex + 1}`}
-            className="w-full h-screen"
+            className="w-full md:h-screen"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
