@@ -131,129 +131,115 @@ useEffect(()=>{
       </div>
       {/* other pages navigation cards */}
       <div
-        id="section"
-        className="flex justify-around p-5 md:flex-row  flex-col gap-10 "
-      >
-        <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            y: [100, 0],
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
-        >
-          <div className="max-w-2xl p-6 bg-[#1D24CA]   rounded-lg shadow  h-full">
-
-            <div className="flex gap-5 flex-col md:flex-row justify-center items-center  h-full">
-              <img
-                className="object-cover h-full md:w-1/2  rounded-lg  "
-                src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1704534678/swykch8cwcfatoljsptf.jpg"
-                alt=""
-              />
-              <div className=" md:w-1/2 flex flex-col justify-between items-start gap-5  h-full">
-              <div className="flex flex-col items-start gap-4">
-                <a href="/about/sureshkumar">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
+  id="section"
+  className="flex justify-around p-5 md:flex-row flex-col gap-10 h-max"
+>
+  <motion.div
+    whileInView={{
+      opacity: [0, 1],
+      y: [100, 0],
+      transition: { duration: 1, ease: "easeInOut" },
+    }}
+  >
+    <div className="max-w-2xl p-6 bg-[#1D24CA] rounded-lg shadow h-full">
+      <div className="flex gap-5 flex-col md:flex-row justify-center items-center h-full">
+        <img
+          className="object-cover max-h-full md:w-1/2 rounded-lg object-fit: cover"
+          src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1704534678/swykch8cwcfatoljsptf.jpg"
+          alt=""
+        />
+        <div className="md:w-1/2 flex flex-col justify-between items-start gap-5 h-full">
+          <div className="flex flex-col items-start gap-4">
+            <a href="/about/sureshkumar">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white">
                 We Pray For You
               </h5>
             </a>
-
-                <p className="mb-3 font-normal text-white ">
-                  Welcome, Dear beloved. These are uncertain times filled with
-                  anxiety and suffering, and you may be wrestling with difficult
-                  situations, or perhaps need a message of encouragement or
-                  hope. May we offer a prayer for you and your concerns?
-                </p>
-                </div>
-
-                <a
-                  href="/about/sureshkumar"
-                  className=" flex items-center px-3 py-3  text-md font-bold justify-center uppercase text-[#000000] bg-white rounded-lg   w-full "
-                >
-                  <h1>
-                  About us
-
-                  </h1>
-                  <svg
-                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+            <p className="mb-3 font-normal text-white">
+              Welcome, Dear beloved. These are uncertain times filled with
+              anxiety and suffering, and you may be wrestling with difficult
+              situations, or perhaps need a message of encouragement or hope.
+              May we offer a prayer for you and your concerns?
+            </p>
           </div>
-        </motion.div>
-
-        <motion.div
-          whileInView={{
-            opacity: [0, 1],
-            y: [100, 0],
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
-        >
-          <div className="max-w-2xl p-6 bg-[#1D24CA]  rounded-lg shadow  h-full ">
-
-
-            
-          <div className="flex gap-5 flex-col md:flex-row justify-center items-center  h-full">
-              <img
-                className="object-cover h-full md:w-1/2  rounded-lg  "
-                src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1707910827/2_x2iri8.jpg"
-                alt=""
+          <a
+            href="/about/sureshkumar"
+            className="flex items-center px-3 py-3 text-md font-bold justify-center uppercase text-[#000000] bg-white rounded-lg w-full"
+          >
+            <h1>About us</h1>
+            <svg
+              className="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
               />
-              <div className=" md:w-1/2 flex flex-col justify-between items-start gap-5  h-full">
-                <div className="flex flex-col items-start gap-4">
-                <a href="/testimonials">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white ">
-God Bless You
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+
+  <motion.div
+    whileInView={{
+      opacity: [0, 1],
+      y: [100, 0],
+      transition: { duration: 1, ease: "easeInOut" },
+    }}
+  >
+    <div className="max-w-2xl p-6 bg-[#1D24CA] rounded-lg shadow h-full">
+      <div className="flex gap-5 flex-col md:flex-row justify-center items-center h-full">
+        <img
+          className="object-cover max-h-full md:w-1/2 rounded-lg object-fit: cover"
+          src="https://res.cloudinary.com/dvmn1kn4y/image/upload/v1707910827/2_x2iri8.jpg"
+          alt=""
+        />
+        <div className="md:w-1/2 flex flex-col justify-between items-start gap-5 h-full">
+          <div className="flex flex-col items-start gap-4">
+            <a href="/testimonials">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-white">
+                God Bless You
               </h5>
             </a>
-                <p className="mb-3 font-normal text-white ">
-                  The true light that gives light to everyone was coming into
-                  the world. - John 1:9 You are the light of the world. Matthew
-                  5:14
-                </p>
-                </div>
-
-                <a
-                  href="/testimonials"
-                  className=" flex items-center px-3 py-3  text-md font-bold justify-center uppercase text-[#000000] bg-white rounded-lg   w-full "
-                >
-                                    <h1>
-                                    Testimonials
-
-                  </h1>
-                  <svg
-                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+            <p className="mb-3 font-normal text-white">
+              The true light that gives light to everyone was coming into the
+              world. - John 1:9 You are the light of the world. Matthew 5:14
+            </p>
           </div>
-        </motion.div>
+          <a
+            href="/testimonials"
+            className="flex items-center px-3 py-3 text-md font-bold justify-center uppercase text-[#000000] bg-white rounded-lg w-full"
+          >
+            <h1>Testimonials</h1>
+            <svg
+              className="rtl:rotate-180 w-3.5 h-3.5 ms-2 rtl:animate-bounce"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
+    </div>
+  </motion.div>
+</div>
 
       {/* services */}
 
