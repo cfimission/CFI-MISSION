@@ -127,13 +127,13 @@ const Page = ({ params }) => {
             <h1 className="text-3xl font-bold mb-4 px-5">{data.title}</h1>
             <p className="text-gray-700 mb-4 px-5">{data.description}</p>
           </motion.div>
-          <div className="flex flex-wrap gap-10 justify-center">
+          <div className="flex flex-wrap gap-5 justify-center">
             {data.ImageUrls.map((imageUrl, index) => (
               <motion.img
                 key={index}
                 src={imageUrl}
                 alt={`Image ${index + 1}`}
-                className="w-auto h-64 p-2"
+                className="w-64 object-cover h-64 "
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(index)}

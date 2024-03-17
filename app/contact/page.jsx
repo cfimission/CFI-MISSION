@@ -31,18 +31,22 @@ const Contact = () => {
     </div>
     <div className="ml-4">
       <h5 className="text-lg font-bold text-white mb-1">WhatsApp</h5>
-      <p className="text-gray-200 text-xl">99494 77535</p>
+      <p className="text-gray-200 text-xl">+91-99494 77535</p>
     </div>
   </div>
 
-  <div className="flex items-center bg-gradient-to-r from-orange-600 to-red-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 w-80 h-32">
+  <div className="flex items-center bg-gradient-to-r from-orange-600 to-red-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 w-80   h-32">
     <div className="bg-white rounded-full p-4">
       <FaEnvelope size={30} color="red" />
     </div>
     <div className="ml-4">
-      <h5 className="text-lg font-bold text-white mb-1">Email</h5>
-      <p className="text-gray-200 text-xl">info@cfimission.org</p>
-    </div>
+  <h5 className="text-lg font-bold text-white mb-1">Email</h5>
+  <h5
+    className="text-gray-200 text-md "
+  >
+    cfimission92@gmail.com
+  </h5>
+</div>
   </div>
 </div>
 
