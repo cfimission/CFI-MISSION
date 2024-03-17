@@ -65,12 +65,12 @@ const Page = ({ params }) => {
       >
         <div className="relative">
           <button
-            className="absolute top-4 right-4 text-white focus:outline-none"
+            className="absolute top-4 right-4 text-white bg-blue-700 rounded-full focus:outline-none"
             onClick={closeModal}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -85,7 +85,7 @@ const Page = ({ params }) => {
           </button>
   
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white focus:outline-none"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-blue-700 rounded-full focus:outline-none"
             onClick={handlePrevious}
           >
                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +96,7 @@ const Page = ({ params }) => {
           <motion.img
             src={data.ImageUrls[selectedImageIndex]}
             alt={`Image ${selectedImageIndex + 1}`}
-            className="w-full md:h-screen"
+            className="w-full md:h-screen h-1/2"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
@@ -104,7 +104,7 @@ const Page = ({ params }) => {
           />
   
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white focus:outline-none"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white focus:outline-none bg-blue-700 rounded-full"
             onClick={handleNext}
           >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,13 +127,13 @@ const Page = ({ params }) => {
             <h1 className="text-3xl font-bold mb-4 px-5">{data.title}</h1>
             <p className="text-gray-700 mb-4 px-5">{data.description}</p>
           </motion.div>
-          <div className="flex flex-wrap gap-5 justify-center">
+          <div className="flex flex-wrap gap-2 md:gap:5 justify-center">
             {data.ImageUrls.map((imageUrl, index) => (
               <motion.img
                 key={index}
                 src={imageUrl}
                 alt={`Image ${index + 1}`}
-                className="w-64 object-cover h-64 "
+                className="md:w-64 object-cover md:h-64  w-28 h-28 "
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(index)}
