@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { FaFacebook, FaYoutube, FaPhone,FaEnvelope } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaPhone,FaEnvelope,FaVideo } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
@@ -44,8 +44,8 @@ const Contact = () => {
   <h5
     className="text-gray-200 text-md "
   >
-    cfimission92@gmail.com
-  </h5>
+ cfimission.marteru@gmail.com
+   </h5>
 </div>
   </div>
 </div>
@@ -68,6 +68,12 @@ const Contact = () => {
     className="flex items-center justify-center bg-blue-100 rounded-full p-4 hover:bg-blue-200 transition-colors duration-300"
   >
     <FaFacebook size={30} className="text-blue-600" />
+  </Link>
+  <Link
+    href="https://zoom.us/join"
+    className="flex items-center justify-center bg-blue-100 rounded-full p-4 hover:bg-blue-200 transition-colors duration-300"
+  >
+    <FaVideo size={30} className="text-blue-600" />
   </Link>
 </div>
 

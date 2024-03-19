@@ -52,7 +52,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://cfi-mission-backend.vercel.app/home");
+      const response = await axios.get("http://localhost:9000/home");
       setRecentImage(response.data.recentImages);
       setBannerImage(response.data.bannerImage);
       setVerses(response.data.verces); // Set the verces data
