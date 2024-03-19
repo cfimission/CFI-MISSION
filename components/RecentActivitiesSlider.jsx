@@ -8,13 +8,14 @@ const RecentActivitiesSlider = ({ img }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleNext = () => {
-    setPositionIndexes((prevIndexes) => {
-      const updatedIndexes = prevIndexes.map(
-        (prevIndex) => (prevIndex + 1) % img.length
-      );
-      return updatedIndexes;
+  setPositionIndexes((prevIndexes) => {
+    const updatedIndexes = prevIndexes.map((prevIndex, i) => {
+      const nextIndex = prevIndex + 1;
+      return nextIndex >= img.length ? i - 4 : nextIndex;
     });
-  };
+    return updatedIndexes;
+  });
+};
 
   const handleImageSelect = (index) => {
     setSelectedImageIndex(index);
