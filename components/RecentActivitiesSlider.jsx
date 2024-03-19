@@ -8,19 +8,19 @@ const RecentActivitiesSlider = ({ img }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleNext = () => {
-  setPositionIndexes((prevIndexes) => {
-    const lastIndex = prevIndexes.length - 1;
-    const updatedIndexes = prevIndexes.map((prevIndex, i) => {
-      if (i === 0) {
-        return prevIndexes[lastIndex];
-      } else if (i === lastIndex) {
-        return prevIndexes[0];
-      } else {
-        return prevIndexes[i - 1];
-      }
-    });
-    return updatedIndexes;
-  });
+
+setPositionIndexes((prevIndexes) => {
+
+const updatedIndexes = prevIndexes.map(
+
+(prevIndex) => (prevIndex + 1) % img.length
+
+);
+
+return updatedIndexes;
+
+});
+
 };
 
   const handleImageSelect = (index) => {
@@ -33,11 +33,17 @@ const RecentActivitiesSlider = ({ img }) => {
   const positions = ["center", "left1", "left", "right", "right1"];
 
   const imageVariants = {
-  center: { x: "0%", scale: 1, zIndex: 5 },
-  left1: { x: "-70%", scale: 0.7, zIndex: 3 },
-  left: { x: "-100%", scale: 0.5, zIndex: 2 },
-  right: { x: "100%", scale: 0.5, zIndex: 1 },
-  right1: { x: "70%", scale: 0.7, zIndex: 3 },
+
+center: { x: "0%", scale: 1, zIndex: 5 },
+
+left1: { x: "-50%", scale: 0.7, zIndex: 3 },
+
+left: { x: "-90%", scale: 0.5, zIndex: 2 },
+
+right: { x: "90%", scale: 0.5, zIndex: 1 },
+
+right1: { x: "50%", scale: 0.7, zIndex: 3 },
+
 };
 
   useEffect(() => {
