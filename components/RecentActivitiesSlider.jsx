@@ -9,9 +9,15 @@ const RecentActivitiesSlider = ({ img }) => {
 
   const handleNext = () => {
   setPositionIndexes((prevIndexes) => {
+    const lastIndex = prevIndexes.length - 1;
     const updatedIndexes = prevIndexes.map((prevIndex, i) => {
-      const nextIndex = prevIndex + 1;
-      return nextIndex >= img.length ? i - 4 : nextIndex;
+      if (i === 0) {
+        return prevIndexes[lastIndex];
+      } else if (i === lastIndex) {
+        return prevIndexes[0];
+      } else {
+        return prevIndexes[i - 1];
+      }
     });
     return updatedIndexes;
   });
