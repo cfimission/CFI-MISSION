@@ -42,7 +42,7 @@ const Contact = () => {
     <div className="ml-4">
   <h5 className="text-lg font-bold text-white mb-1">Email</h5>
   <h5
-    className="text-gray-200 text-md "
+    className="text-gray-200 text-sm "
   >
  cfimission.marteru@gmail.com
    </h5>
